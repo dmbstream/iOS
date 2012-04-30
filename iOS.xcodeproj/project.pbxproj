@@ -15,6 +15,14 @@
 		388EAF39154B44A3009F9ED9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 388EAF38154B44A3009F9ED9 /* AppDelegate.m */; };
 		388EAF3C154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF3A154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard */; };
 		388EAF3F154B44A3009F9ED9 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF3D154B44A3009F9ED9 /* MainStoryboard_iPad.storyboard */; };
+		388EAF7A154E046E009F9ED9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF78154E046E009F9ED9 /* logo.png */; };
+		388EAF7B154E046E009F9ED9 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF79154E046E009F9ED9 /* logo@2x.png */; };
+		388EAF7E154E0B0F009F9ED9 /* arrow_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF7C154E0B0F009F9ED9 /* arrow_@2x.png */; };
+		388EAF7F154E0B0F009F9ED9 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF7D154E0B0F009F9ED9 /* arrow.png */; };
+		388EAF82154E0B39009F9ED9 /* rule.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF80154E0B39009F9ED9 /* rule.png */; };
+		388EAF83154E0B39009F9ED9 /* rule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF81154E0B39009F9ED9 /* rule@2x.png */; };
+		388EAF86154E1075009F9ED9 /* keyline.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF84154E1075009F9ED9 /* keyline.png */; };
+		388EAF87154E1075009F9ED9 /* keyline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388EAF85154E1075009F9ED9 /* keyline@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		388EAF38154B44A3009F9ED9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		388EAF3B154B44A3009F9ED9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		388EAF3E154B44A3009F9ED9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		388EAF78154E046E009F9ED9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		388EAF79154E046E009F9ED9 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		388EAF7C154E0B0F009F9ED9 /* arrow_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_@2x.png"; sourceTree = "<group>"; };
+		388EAF7D154E0B0F009F9ED9 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		388EAF80154E0B39009F9ED9 /* rule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rule.png; sourceTree = "<group>"; };
+		388EAF81154E0B39009F9ED9 /* rule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rule@2x.png"; sourceTree = "<group>"; };
+		388EAF84154E1075009F9ED9 /* keyline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyline.png; sourceTree = "<group>"; };
+		388EAF85154E1075009F9ED9 /* keyline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyline@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				388EAF2E154B44A3009F9ED9 /* iOS */,
+				388EAF67154DFAE4009F9ED9 /* Resources */,
 				388EAF27154B44A3009F9ED9 /* Frameworks */,
 				388EAF25154B44A3009F9ED9 /* Products */,
 			);
@@ -76,6 +93,9 @@
 		388EAF2E154B44A3009F9ED9 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				388EAF6D154DFBB8009F9ED9 /* Controllers */,
+				388EAF6F154DFC12009F9ED9 /* Infrastructure */,
+				388EAF6E154DFBC5009F9ED9 /* Models */,
 				388EAF37154B44A3009F9ED9 /* AppDelegate.h */,
 				388EAF38154B44A3009F9ED9 /* AppDelegate.m */,
 				388EAF3A154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard */,
@@ -94,6 +114,50 @@
 				388EAF36154B44A3009F9ED9 /* iOS-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		388EAF67154DFAE4009F9ED9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				388EAF68154DFB5E009F9ED9 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		388EAF68154DFB5E009F9ED9 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				388EAF84154E1075009F9ED9 /* keyline.png */,
+				388EAF85154E1075009F9ED9 /* keyline@2x.png */,
+				388EAF80154E0B39009F9ED9 /* rule.png */,
+				388EAF81154E0B39009F9ED9 /* rule@2x.png */,
+				388EAF7C154E0B0F009F9ED9 /* arrow_@2x.png */,
+				388EAF7D154E0B0F009F9ED9 /* arrow.png */,
+				388EAF78154E046E009F9ED9 /* logo.png */,
+				388EAF79154E046E009F9ED9 /* logo@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		388EAF6D154DFBB8009F9ED9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		388EAF6E154DFBC5009F9ED9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		388EAF6F154DFC12009F9ED9 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +214,14 @@
 				388EAF33154B44A3009F9ED9 /* InfoPlist.strings in Resources */,
 				388EAF3C154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard in Resources */,
 				388EAF3F154B44A3009F9ED9 /* MainStoryboard_iPad.storyboard in Resources */,
+				388EAF7A154E046E009F9ED9 /* logo.png in Resources */,
+				388EAF7B154E046E009F9ED9 /* logo@2x.png in Resources */,
+				388EAF7E154E0B0F009F9ED9 /* arrow_@2x.png in Resources */,
+				388EAF7F154E0B0F009F9ED9 /* arrow.png in Resources */,
+				388EAF82154E0B39009F9ED9 /* rule.png in Resources */,
+				388EAF83154E0B39009F9ED9 /* rule@2x.png in Resources */,
+				388EAF86154E1075009F9ED9 /* keyline.png in Resources */,
+				388EAF87154E1075009F9ED9 /* keyline@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +355,7 @@
 				388EAF4A154B44A3009F9ED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
