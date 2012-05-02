@@ -40,4 +40,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)done:(UIBarButtonItem *)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end

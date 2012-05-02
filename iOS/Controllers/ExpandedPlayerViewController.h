@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ExpandedPlayerViewController : UIViewController
+- (IBAction)done:(id)sender;
 
 @end
