@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380B3B151554771300DEADA4 /* YourPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B141554771300DEADA4 /* YourPlaylistsViewController.m */; };
+		380B3B191554774200DEADA4 /* YourFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B181554774200DEADA4 /* YourFavoritesViewController.m */; };
+		380B3B1D1554777600DEADA4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B1C1554777600DEADA4 /* SearchViewController.m */; };
+		380B3B211554799F00DEADA4 /* LatestPerformedConcertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B201554799F00DEADA4 /* LatestPerformedConcertsViewController.m */; };
+		380B3B24155479B200DEADA4 /* LatestAddedConcertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B23155479B200DEADA4 /* LatestAddedConcertsViewController.m */; };
+		380B3B28155479D900DEADA4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B27155479D900DEADA4 /* ChatViewController.m */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -39,6 +45,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		380B3B131554771300DEADA4 /* YourPlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourPlaylistsViewController.h; sourceTree = "<group>"; };
+		380B3B141554771300DEADA4 /* YourPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourPlaylistsViewController.m; sourceTree = "<group>"; };
+		380B3B171554774200DEADA4 /* YourFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourFavoritesViewController.h; sourceTree = "<group>"; };
+		380B3B181554774200DEADA4 /* YourFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourFavoritesViewController.m; sourceTree = "<group>"; };
+		380B3B1B1554777600DEADA4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		380B3B1C1554777600DEADA4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		380B3B1F1554799F00DEADA4 /* LatestPerformedConcertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestPerformedConcertsViewController.h; sourceTree = "<group>"; };
+		380B3B201554799F00DEADA4 /* LatestPerformedConcertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestPerformedConcertsViewController.m; sourceTree = "<group>"; };
+		380B3B22155479B200DEADA4 /* LatestAddedConcertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestAddedConcertsViewController.h; sourceTree = "<group>"; };
+		380B3B23155479B200DEADA4 /* LatestAddedConcertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestAddedConcertsViewController.m; sourceTree = "<group>"; };
+		380B3B26155479D900DEADA4 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		380B3B27155479D900DEADA4 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -89,6 +107,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380B3B11155476FE00DEADA4 /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B131554771300DEADA4 /* YourPlaylistsViewController.h */,
+				380B3B141554771300DEADA4 /* YourPlaylistsViewController.m */,
+			);
+			path = Playlists;
+			sourceTree = "<group>";
+		};
+		380B3B161554772400DEADA4 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B171554774200DEADA4 /* YourFavoritesViewController.h */,
+				380B3B181554774200DEADA4 /* YourFavoritesViewController.m */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		380B3B1A1554775000DEADA4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B1B1554777600DEADA4 /* SearchViewController.h */,
+				380B3B1C1554777600DEADA4 /* SearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		380B3B1E1554795A00DEADA4 /* Concerts */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B1F1554799F00DEADA4 /* LatestPerformedConcertsViewController.h */,
+				380B3B201554799F00DEADA4 /* LatestPerformedConcertsViewController.m */,
+				380B3B22155479B200DEADA4 /* LatestAddedConcertsViewController.h */,
+				380B3B23155479B200DEADA4 /* LatestAddedConcertsViewController.m */,
+			);
+			path = Concerts;
+			sourceTree = "<group>";
+		};
+		380B3B25155479C200DEADA4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B26155479D900DEADA4 /* ChatViewController.h */,
+				380B3B27155479D900DEADA4 /* ChatViewController.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		388EAF19154B44A2009F9ED9 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +246,11 @@
 		388EAF6D154DFBB8009F9ED9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				380B3B25155479C200DEADA4 /* Chat */,
+				380B3B1E1554795A00DEADA4 /* Concerts */,
+				380B3B1A1554775000DEADA4 /* Search */,
+				380B3B161554772400DEADA4 /* Favorites */,
+				380B3B11155476FE00DEADA4 /* Playlists */,
 				3822DECA1550E3BA00E1A452 /* ExpandedPlayerViewController.h */,
 				3822DECB1550E3BA00E1A452 /* ExpandedPlayerViewController.m */,
 			);
@@ -288,6 +358,12 @@
 				388EAF35154B44A3009F9ED9 /* main.m in Sources */,
 				388EAF39154B44A3009F9ED9 /* AppDelegate.m in Sources */,
 				3822DECC1550E3BA00E1A452 /* ExpandedPlayerViewController.m in Sources */,
+				380B3B151554771300DEADA4 /* YourPlaylistsViewController.m in Sources */,
+				380B3B191554774200DEADA4 /* YourFavoritesViewController.m in Sources */,
+				380B3B1D1554777600DEADA4 /* SearchViewController.m in Sources */,
+				380B3B211554799F00DEADA4 /* LatestPerformedConcertsViewController.m in Sources */,
+				380B3B24155479B200DEADA4 /* LatestAddedConcertsViewController.m in Sources */,
+				380B3B28155479D900DEADA4 /* ChatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
