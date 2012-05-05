@@ -10,4 +10,6 @@
 
 @interface LatestAddedConcertsViewController : UIViewController
 
+- (IBAction)back:(id)sender;
+
 @end

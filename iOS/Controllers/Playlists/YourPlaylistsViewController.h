@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YourPlaylistsViewController : UIViewController
+- (IBAction)back:(id)sender;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface ChatViewController : UIViewController
 
+- (IBAction)back:(id)sender;
+
 @end

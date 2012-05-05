@@ -445,7 +445,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Chat" id="Fug-Nt-3GC">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="Xm8-B8-USy"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="Xm8-B8-USy">
+                                                    <connections>
+                                                        <action selector="back:" destination="bHy-ad-Xcc" id="AzK-wi-QTx"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -506,6 +510,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="adt-CG-5wn"/>
+                    <connections>
+                        <outlet property="back" destination="Xm8-B8-USy" id="UXp-fh-ThN"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1425" y="135"/>
@@ -568,7 +575,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Latest Added Concerts" id="SIC-Km-QsC">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="0Rw-sm-M0s"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="0Rw-sm-M0s">
+                                                    <connections>
+                                                        <action selector="back:" destination="vXQ-0D-v8s" id="dfV-hG-vSW"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -672,7 +683,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Latest Performances" id="iqA-zk-1Vg">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="R50-bA-vwQ"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="R50-bA-vwQ">
+                                                    <connections>
+                                                        <action selector="back:" destination="wDz-Qp-Grb" id="cnf-D1-gEQ"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -776,7 +791,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Search" id="yaJ-mZ-eOG">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="zUU-85-Qe8"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="zUU-85-Qe8">
+                                                    <connections>
+                                                        <action selector="back:" destination="PGS-1P-aDL" id="ygv-1J-4eN"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -880,7 +899,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Your Favorites" id="0Td-gR-1ym">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="8sB-7P-7BT"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="8sB-7P-7BT">
+                                                    <connections>
+                                                        <action selector="back:" destination="CmU-sS-4Lp" id="gMo-pd-PBb"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -888,7 +911,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LGg-dU-tkG">
-                                <rect key="frame" x="0.0" y="88" width="320" height="330"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="330"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="VW0-eR-KQp">
@@ -984,7 +1007,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Your Playlists" id="Odi-eg-fv5">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="dyG-xW-xut"/>
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="dyG-xW-xut">
+                                                    <connections>
+                                                        <action selector="back:" destination="yy8-05-UY4" id="OcE-Rl-iNV"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -1061,6 +1088,9 @@
     <classes>
         <class className="ChatViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChatViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
         <class className="ExpandedPlayerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpandedPlayerViewController.h"/>
@@ -1070,18 +1100,33 @@
         </class>
         <class className="LatestAddedConcertsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LatestAddedConcertsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
         <class className="LatestPerformedConcertsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LatestPerformedConcertsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
         <class className="SearchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
         <class className="YourFavoritesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YourFavoritesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
         <class className="YourPlaylistsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YourPlaylistsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

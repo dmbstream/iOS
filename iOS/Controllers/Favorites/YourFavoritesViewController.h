@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YourFavoritesViewController : UIViewController
+- (IBAction)back:(id)sender;
 
 @end
