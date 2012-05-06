@@ -35,6 +35,8 @@
 		380B3B691556D41C00DEADA4 /* ChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B681556D41C00DEADA4 /* ChatView.xib */; };
 		380B3B6B1556D43200DEADA4 /* YourFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B6A1556D43200DEADA4 /* YourFavoritesViewController.xib */; };
 		380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */; };
+		380B3B721556FD6200DEADA4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B711556FD6200DEADA4 /* LoginViewController.m */; };
+		380B3B741556FD7600DEADA4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B731556FD7600DEADA4 /* LoginView.xib */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -106,6 +108,9 @@
 		380B3B681556D41C00DEADA4 /* ChatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatView.xib; sourceTree = "<group>"; };
 		380B3B6A1556D43200DEADA4 /* YourFavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourFavoritesViewController.xib; sourceTree = "<group>"; };
 		380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourPlaylistsViewController.xib; sourceTree = "<group>"; };
+		380B3B701556FD6200DEADA4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		380B3B711556FD6200DEADA4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		380B3B731556FD7600DEADA4 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -221,6 +226,7 @@
 		380B3B361555F0BF00DEADA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				380B3B6E1556FD0800DEADA4 /* Login */,
 				380B3B671556D29600DEADA4 /* Chat */,
 				380B3B43155627E100DEADA4 /* MainMenu */,
 				380B3B601556C6E600DEADA4 /* Concerts */,
@@ -298,6 +304,23 @@
 				380B3B681556D41C00DEADA4 /* ChatView.xib */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		380B3B6E1556FD0800DEADA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B731556FD7600DEADA4 /* LoginView.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		380B3B6F1556FD2D00DEADA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B701556FD6200DEADA4 /* LoginViewController.h */,
+				380B3B711556FD6200DEADA4 /* LoginViewController.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		388EAF19154B44A2009F9ED9 = {
@@ -400,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				380B3B291555E42800DEADA4 /* Shared */,
+				380B3B6F1556FD2D00DEADA4 /* Login */,
 				380B3B3C15561B5C00DEADA4 /* MainMenu */,
 				380B3B25155479C200DEADA4 /* Chat */,
 				380B3B1E1554795A00DEADA4 /* Concerts */,
@@ -514,6 +538,7 @@
 				380B3B691556D41C00DEADA4 /* ChatView.xib in Resources */,
 				380B3B6B1556D43200DEADA4 /* YourFavoritesViewController.xib in Resources */,
 				380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */,
+				380B3B741556FD7600DEADA4 /* LoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +563,7 @@
 				380B3B351555EE5400DEADA4 /* FooterViewController.m in Sources */,
 				380B3B3F15561B9500DEADA4 /* MainMenuViewController.m in Sources */,
 				380B3B4215561D8E00DEADA4 /* ContainerViewController.m in Sources */,
+				380B3B721556FD6200DEADA4 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "LoginViewController.h"
 #import "SearchViewController.h"
 #import "ExpandedPlayerViewController.h"
 
@@ -35,6 +36,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToSearchView) name:@"SearchViewRequested" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showExpandedPlayerView) name:@"ShowExpandedPlayer" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(togglePlay) name:@"TogglePlay" object:nil];
+    
+    if (true) {
+        LoginViewController *loginController = [[LoginViewController alloc] init];
+        [self presentModalViewController:loginController animated:NO];
+    }
 }
 
 - (void)viewDidUnload
