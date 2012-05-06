@@ -11,6 +11,8 @@
 @interface FooterViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UILabel *songTitle;
+@property (weak, nonatomic) IBOutlet UILabel *artistAndVenueTitle;
 
 - (IBAction)togglePlay:(id)sender;
 - (IBAction)showExpandedPlayer:(id)sender;

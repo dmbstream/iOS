@@ -14,6 +14,8 @@
 
 @implementation FooterViewController
 @synthesize playButton;
+@synthesize songTitle;
+@synthesize artistAndVenueTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshPlayPauseButton) name:@"TogglePlay" object:nil];
 }
 
@@ -35,6 +37,8 @@
 {
     [self setPlayButton:nil];
     [self setPlayButton:nil];
+    [self setSongTitle:nil];
+    [self setArtistAndVenueTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
