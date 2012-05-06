@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface YourFavoritesViewController : UIViewController
+@interface YourFavoritesViewController : BaseViewController
 - (IBAction)back:(id)sender;
 
 @end

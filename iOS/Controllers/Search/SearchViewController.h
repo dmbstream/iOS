@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SearchViewController : UIViewController
+@interface SearchViewController : BaseViewController
 - (IBAction)back:(id)sender;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface LatestPerformedConcertsViewController : UIViewController
+@interface LatestPerformedConcertsViewController : BaseViewController
 
 - (IBAction)back:(id)sender;
 

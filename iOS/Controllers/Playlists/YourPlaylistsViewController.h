@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface YourPlaylistsViewController : UIViewController
+@interface YourPlaylistsViewController : BaseViewController
 - (IBAction)back:(id)sender;
 
 @end
