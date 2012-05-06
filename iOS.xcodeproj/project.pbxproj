@@ -19,6 +19,16 @@
 		380B3B351555EE5400DEADA4 /* FooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B341555EE5400DEADA4 /* FooterViewController.m */; };
 		380B3B391555F10300DEADA4 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B381555F10300DEADA4 /* HeaderView.xib */; };
 		380B3B3B1556037400DEADA4 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B3A1556037400DEADA4 /* FooterView.xib */; };
+		380B3B3F15561B9500DEADA4 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B3E15561B9500DEADA4 /* MainMenuViewController.m */; };
+		380B3B4215561D8E00DEADA4 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B4115561D8E00DEADA4 /* ContainerViewController.m */; };
+		380B3B4515562ABD00DEADA4 /* MainMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B4415562ABD00DEADA4 /* MainMenuView.xib */; };
+		380B3B471556308500DEADA4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B461556308500DEADA4 /* MainWindow.xib */; };
+		380B3B4B1556457300DEADA4 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B4A1556457300DEADA4 /* SearchView.xib */; };
+		380B3B4D15564A2800DEADA4 /* ExpandedPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B4C15564A2800DEADA4 /* ExpandedPlayerView.xib */; };
+		380B3B56155661BB00DEADA4 /* toolbar_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B52155661BB00DEADA4 /* toolbar_pause.png */; };
+		380B3B57155661BB00DEADA4 /* toolbar_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B53155661BB00DEADA4 /* toolbar_pause@2x.png */; };
+		380B3B58155661BB00DEADA4 /* toolbar_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B54155661BB00DEADA4 /* toolbar_play.png */; };
+		380B3B59155661BB00DEADA4 /* toolbar_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B55155661BB00DEADA4 /* toolbar_play@2x.png */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -72,6 +82,18 @@
 		380B3B341555EE5400DEADA4 /* FooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterViewController.m; sourceTree = "<group>"; };
 		380B3B381555F10300DEADA4 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		380B3B3A1556037400DEADA4 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		380B3B3D15561B9500DEADA4 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		380B3B3E15561B9500DEADA4 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		380B3B4015561D8E00DEADA4 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		380B3B4115561D8E00DEADA4 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		380B3B4415562ABD00DEADA4 /* MainMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuView.xib; sourceTree = "<group>"; };
+		380B3B461556308500DEADA4 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		380B3B4A1556457300DEADA4 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		380B3B4C15564A2800DEADA4 /* ExpandedPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedPlayerView.xib; sourceTree = "<group>"; };
+		380B3B52155661BB00DEADA4 /* toolbar_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_pause.png; sourceTree = "<group>"; };
+		380B3B53155661BB00DEADA4 /* toolbar_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar_pause@2x.png"; sourceTree = "<group>"; };
+		380B3B54155661BB00DEADA4 /* toolbar_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_play.png; sourceTree = "<group>"; };
+		380B3B55155661BB00DEADA4 /* toolbar_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar_play@2x.png"; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -178,6 +200,8 @@
 				380B3B311555EE4100DEADA4 /* HeaderViewController.m */,
 				380B3B331555EE5400DEADA4 /* FooterViewController.h */,
 				380B3B341555EE5400DEADA4 /* FooterViewController.m */,
+				380B3B4015561D8E00DEADA4 /* ContainerViewController.h */,
+				380B3B4115561D8E00DEADA4 /* ContainerViewController.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -185,6 +209,8 @@
 		380B3B361555F0BF00DEADA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				380B3B49155644F400DEADA4 /* Search */,
+				380B3B43155627E100DEADA4 /* MainMenu */,
 				380B3B371555F0D700DEADA4 /* Shared */,
 			);
 			path = Views;
@@ -195,8 +221,34 @@
 			children = (
 				380B3B381555F10300DEADA4 /* HeaderView.xib */,
 				380B3B3A1556037400DEADA4 /* FooterView.xib */,
+				380B3B4C15564A2800DEADA4 /* ExpandedPlayerView.xib */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		380B3B3C15561B5C00DEADA4 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B3D15561B9500DEADA4 /* MainMenuViewController.h */,
+				380B3B3E15561B9500DEADA4 /* MainMenuViewController.m */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		380B3B43155627E100DEADA4 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B4415562ABD00DEADA4 /* MainMenuView.xib */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		380B3B49155644F400DEADA4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B4A1556457300DEADA4 /* SearchView.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		388EAF19154B44A2009F9ED9 = {
@@ -239,6 +291,7 @@
 				388EAF3A154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard */,
 				388EAF3D154B44A3009F9ED9 /* MainStoryboard_iPad.storyboard */,
 				388EAF2F154B44A3009F9ED9 /* Supporting Files */,
+				380B3B461556308500DEADA4 /* MainWindow.xib */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -265,6 +318,10 @@
 		388EAF68154DFB5E009F9ED9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				380B3B52155661BB00DEADA4 /* toolbar_pause.png */,
+				380B3B53155661BB00DEADA4 /* toolbar_pause@2x.png */,
+				380B3B54155661BB00DEADA4 /* toolbar_play.png */,
+				380B3B55155661BB00DEADA4 /* toolbar_play@2x.png */,
 				3822DEAD154E506400E1A452 /* fastforward.png */,
 				3822DEAE154E506400E1A452 /* fastforward@2x.png */,
 				3822DEAF154E506400E1A452 /* pause.png */,
@@ -293,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				380B3B291555E42800DEADA4 /* Shared */,
+				380B3B3C15561B5C00DEADA4 /* MainMenu */,
 				380B3B25155479C200DEADA4 /* Chat */,
 				380B3B1E1554795A00DEADA4 /* Concerts */,
 				380B3B1A1554775000DEADA4 /* Search */,
@@ -392,6 +450,14 @@
 				3822DEC8154E506400E1A452 /* stop@2x.png in Resources */,
 				380B3B391555F10300DEADA4 /* HeaderView.xib in Resources */,
 				380B3B3B1556037400DEADA4 /* FooterView.xib in Resources */,
+				380B3B4515562ABD00DEADA4 /* MainMenuView.xib in Resources */,
+				380B3B471556308500DEADA4 /* MainWindow.xib in Resources */,
+				380B3B4B1556457300DEADA4 /* SearchView.xib in Resources */,
+				380B3B4D15564A2800DEADA4 /* ExpandedPlayerView.xib in Resources */,
+				380B3B56155661BB00DEADA4 /* toolbar_pause.png in Resources */,
+				380B3B57155661BB00DEADA4 /* toolbar_pause@2x.png in Resources */,
+				380B3B58155661BB00DEADA4 /* toolbar_play.png in Resources */,
+				380B3B59155661BB00DEADA4 /* toolbar_play@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +480,8 @@
 				380B3B2F1555ED7A00DEADA4 /* BaseViewController.m in Sources */,
 				380B3B321555EE4100DEADA4 /* HeaderViewController.m in Sources */,
 				380B3B351555EE5400DEADA4 /* FooterViewController.m in Sources */,
+				380B3B3F15561B9500DEADA4 /* MainMenuViewController.m in Sources */,
+				380B3B4215561D8E00DEADA4 /* ContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

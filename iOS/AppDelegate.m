@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "HeaderViewController.h"
+#import "FooterViewController.h"
+#import "MainMenuViewController.h"
+#import "ContainerViewController.h"
 
 @implementation AppDelegate
 
@@ -17,12 +21,23 @@
 {
     self.netActivityReqs = 0;
 
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
+    [self.window makeKeyAndVisible];
+
+    HeaderViewController *headerController = [[HeaderViewController alloc] init];
+    FooterViewController *footerController = [[FooterViewController alloc] init];
+    
+    MainMenuViewController *mainMenuController = [[MainMenuViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainMenuController];
+    [navController setNavigationBarHidden:YES];
+    
+    ContainerViewController *containerController = [[ContainerViewController alloc] init];
+    containerController.headerController = headerController;
+    containerController.footerController = footerController;
+    containerController.contentController = navController;
+    
+    self.window.rootViewController = containerController;
+
     return YES;
 }
 							

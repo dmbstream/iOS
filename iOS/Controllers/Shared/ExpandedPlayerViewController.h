@@ -10,5 +10,6 @@
 
 @interface ExpandedPlayerViewController : UIViewController
 - (IBAction)done:(id)sender;
+- (IBAction)togglePlay:(id)sender;
 
 @end

@@ -33,6 +33,8 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToRootView) name:@"RootViewRequested" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToSearchView) name:@"SearchViewRequested" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showExpandedPlayerView) name:@"ShowExpandedPlayer" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(togglePlay) name:@"TogglePlay" object:nil];
 }
 
 - (void)viewDidUnload
@@ -54,9 +56,11 @@
 #pragma mark Methods
 
 - (void)navigateToRootView {
+    NSLog(@"navigateToRootView");
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (void)navigateToSearchView {
+    NSLog(@"navigateToSearchView");
     
     SearchViewController *searchController = [[SearchViewController alloc] init];
     searchController.managedObjectContext = self.managedObjectContext;
@@ -64,10 +68,14 @@
     [self.navigationController pushViewController:searchController animated:YES];
 }
 - (void)showExpandedPlayerView {
+    NSLog(@"showExpandedPlayerView");
     
     ExpandedPlayerViewController *expandedPlayerController = [[ExpandedPlayerViewController alloc] init];
     
     [self presentModalViewController:expandedPlayerController animated:YES];
+}
+- (void)togglePlay {
+    NSLog(@"togglePlay");
 }
 
 @end

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (atomic) int *netActivityReqs;
 
 -(void) requestNetworkActivityIndicator;

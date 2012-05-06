@@ -43,4 +43,8 @@
 - (IBAction)done:(UIBarButtonItem *)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)togglePlay:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"TogglePlay" object:self];
+}
 @end

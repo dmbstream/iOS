@@ -10,7 +10,11 @@
 
 @interface FooterViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+
 - (IBAction)togglePlay:(id)sender;
 - (IBAction)showExpandedPlayer:(id)sender;
+
+- (void)refreshPlayPauseButton;
 
 @end

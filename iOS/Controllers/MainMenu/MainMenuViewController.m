@@ -1,18 +1,18 @@
 //
-//  SearchViewController.m
+//  MainMenuViewController.m
 //  iOS
 //
-//  Created by James Geurts on 5/4/12.
+//  Created by James Geurts on 5/5/12.
 //  Copyright (c) 2012 Bia Creations. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "MainMenuViewController.h"
 
-@interface SearchViewController ()
+@interface MainMenuViewController ()
 
 @end
 
-@implementation SearchViewController
+@implementation MainMenuViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    
+	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
@@ -41,7 +40,4 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 @end

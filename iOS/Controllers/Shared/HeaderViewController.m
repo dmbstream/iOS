@@ -41,10 +41,12 @@
 }
 
 - (IBAction)search:(id)sender {
+    NSLog(@"search button clicked");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SearchViewRequested" object:self];
 }
 
 - (IBAction)backToRootView:(id)sender {
+    NSLog(@"home button clicked");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RootViewRequested" object:self];
 }
 @end

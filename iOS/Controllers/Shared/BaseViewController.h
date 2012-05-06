@@ -15,5 +15,6 @@
 - (void)navigateToRootView;
 - (void)navigateToSearchView;
 - (void)showExpandedPlayerView;
+- (void)togglePlay;
 
 @end

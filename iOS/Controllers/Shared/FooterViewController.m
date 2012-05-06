@@ -13,6 +13,7 @@
 @end
 
 @implementation FooterViewController
+@synthesize playButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,13 +27,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshPlayPauseButton) name:@"TogglePlay" object:nil];
 }
 
 - (void)viewDidUnload
 {
+    [self setPlayButton:nil];
+    [self setPlayButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -47,4 +56,11 @@
 - (IBAction)showExpandedPlayer:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowExpandedPlayer" object:self];
 }
+
+- (void)refreshPlayPauseButton {
+    NSLog(@"refreshPlayPauseButton");
+    UIImage *pauseImage = [UIImage imageNamed:@"toolbar_pause.png"];
+    [self.playButton setImage:pauseImage forState:UIControlStateNormal];
+}
+
 @end
