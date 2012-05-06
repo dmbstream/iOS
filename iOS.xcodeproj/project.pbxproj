@@ -30,6 +30,11 @@
 		380B3B58155661BB00DEADA4 /* toolbar_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B54155661BB00DEADA4 /* toolbar_play.png */; };
 		380B3B59155661BB00DEADA4 /* toolbar_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B55155661BB00DEADA4 /* toolbar_play@2x.png */; };
 		380B3B5F1556BCF100DEADA4 /* resizerVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B5E1556BCF100DEADA4 /* resizerVertical.png */; };
+		380B3B621556C75F00DEADA4 /* LatestPerformedConcertsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B611556C75F00DEADA4 /* LatestPerformedConcertsView.xib */; };
+		380B3B641556C76E00DEADA4 /* LatestAddedConcertsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B631556C76E00DEADA4 /* LatestAddedConcertsView.xib */; };
+		380B3B691556D41C00DEADA4 /* ChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B681556D41C00DEADA4 /* ChatView.xib */; };
+		380B3B6B1556D43200DEADA4 /* YourFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B6A1556D43200DEADA4 /* YourFavoritesViewController.xib */; };
+		380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -96,6 +101,11 @@
 		380B3B54155661BB00DEADA4 /* toolbar_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_play.png; sourceTree = "<group>"; };
 		380B3B55155661BB00DEADA4 /* toolbar_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar_play@2x.png"; sourceTree = "<group>"; };
 		380B3B5E1556BCF100DEADA4 /* resizerVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizerVertical.png; sourceTree = "<group>"; };
+		380B3B611556C75F00DEADA4 /* LatestPerformedConcertsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestPerformedConcertsView.xib; sourceTree = "<group>"; };
+		380B3B631556C76E00DEADA4 /* LatestAddedConcertsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestAddedConcertsView.xib; sourceTree = "<group>"; };
+		380B3B681556D41C00DEADA4 /* ChatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatView.xib; sourceTree = "<group>"; };
+		380B3B6A1556D43200DEADA4 /* YourFavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourFavoritesViewController.xib; sourceTree = "<group>"; };
+		380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourPlaylistsViewController.xib; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -211,8 +221,12 @@
 		380B3B361555F0BF00DEADA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				380B3B49155644F400DEADA4 /* Search */,
+				380B3B671556D29600DEADA4 /* Chat */,
 				380B3B43155627E100DEADA4 /* MainMenu */,
+				380B3B601556C6E600DEADA4 /* Concerts */,
+				380B3B49155644F400DEADA4 /* Search */,
+				380B3B651556D1AB00DEADA4 /* Favorites */,
+				380B3B661556D1D800DEADA4 /* Playlists */,
 				380B3B371555F0D700DEADA4 /* Shared */,
 			);
 			path = Views;
@@ -251,6 +265,39 @@
 				380B3B4A1556457300DEADA4 /* SearchView.xib */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		380B3B601556C6E600DEADA4 /* Concerts */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B611556C75F00DEADA4 /* LatestPerformedConcertsView.xib */,
+				380B3B631556C76E00DEADA4 /* LatestAddedConcertsView.xib */,
+			);
+			path = Concerts;
+			sourceTree = "<group>";
+		};
+		380B3B651556D1AB00DEADA4 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B6A1556D43200DEADA4 /* YourFavoritesViewController.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		380B3B661556D1D800DEADA4 /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */,
+			);
+			path = Playlists;
+			sourceTree = "<group>";
+		};
+		380B3B671556D29600DEADA4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				380B3B681556D41C00DEADA4 /* ChatView.xib */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		388EAF19154B44A2009F9ED9 = {
@@ -462,6 +509,11 @@
 				380B3B58155661BB00DEADA4 /* toolbar_play.png in Resources */,
 				380B3B59155661BB00DEADA4 /* toolbar_play@2x.png in Resources */,
 				380B3B5F1556BCF100DEADA4 /* resizerVertical.png in Resources */,
+				380B3B621556C75F00DEADA4 /* LatestPerformedConcertsView.xib in Resources */,
+				380B3B641556C76E00DEADA4 /* LatestAddedConcertsView.xib in Resources */,
+				380B3B691556D41C00DEADA4 /* ChatView.xib in Resources */,
+				380B3B6B1556D43200DEADA4 /* YourFavoritesViewController.xib in Resources */,
+				380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

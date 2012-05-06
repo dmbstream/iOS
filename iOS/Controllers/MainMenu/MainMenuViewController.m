@@ -7,6 +7,11 @@
 //
 
 #import "MainMenuViewController.h"
+#import "ChatViewController.h"
+#import "LatestAddedConcertsViewController.h"
+#import "LatestPerformedConcertsViewController.h"
+#import "YourFavoritesViewController.h"
+#import "YourPlaylistsViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -40,4 +45,45 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)chat:(id)sender {
+    ChatViewController *controller = [[ChatViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)latestAddedConcerts:(id)sender {
+    LatestAddedConcertsViewController *controller = [[LatestAddedConcertsViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)latestPerformedConcerts:(id)sender {
+    LatestPerformedConcertsViewController *controller = [[LatestPerformedConcertsViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)search:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SearchViewRequested" object:self];
+}
+
+- (IBAction)randomConcert:(id)sender {
+}
+
+- (IBAction)yourFavorites:(id)sender {
+    YourFavoritesViewController *controller = [[YourFavoritesViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)yourPlaylists:(id)sender {
+    YourPlaylistsViewController *controller = [[YourPlaylistsViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end
