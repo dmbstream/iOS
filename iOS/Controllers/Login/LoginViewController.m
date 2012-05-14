@@ -7,6 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "AccountService.h"
+#import "AppDelegate.h"
+#import "UITextField+Validation.h"
 
 @interface LoginViewController ()
 
@@ -28,7 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    username.delegate = self;
+    password.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -44,8 +49,70 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField*)_textField
+{
+    if (_textField == username) {
+        [password becomeFirstResponder];        
+    } else if (_textField == password) {
+        [password resignFirstResponder];
+        [self login:password];
+    }
+    return YES;
+}
+
 - (IBAction)login:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    
+
+    BOOL isValid = TRUE;
+    NSString *userErrors = [[NSString alloc] initWithString:@""];
+    
+    if(![username requiredText])
+    {
+        isValid = FALSE;
+        [username becomeFirstResponder];
+        userErrors = [userErrors stringByAppendingString:@"Username is required. \r\n"];
+    }
+    if(![password requiredText])
+    {
+        if (isValid) 
+        {
+            [password becomeFirstResponder];
+        }
+        userErrors = [userErrors stringByAppendingString:@"Password is required. \r\n"];
+        isValid = FALSE;
+    }
+    
+    if (isValid) 
+    {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+        [appDelegate requestNetworkActivityIndicator];
+        AccountService *service = [AccountService new];
+    
+        [service getUser:[username text] password:[password text] completionHandler:^(User* user, NSError* error) {
+            [appDelegate releaseNetworkActivityIndicator];
+            if (error) {
+                NSMutableString *message = [[NSMutableString alloc] initWithString: @"The specific username or password was incorrect.  "];
+//                [message appendString:[error localizedDescription]];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+                [alertView show];
+
+                NSLog(@"%@", error);
+            } else {
+                NSLog(@"%@", user);
+                // TODO: Cache the user information in a plist
+                [self dismissModalViewControllerAnimated:YES];
+            }
+        }];
+    } 
+    else
+    {
+        UIAlertView *errors = [[UIAlertView alloc] initWithTitle:nil message:userErrors delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [errors show];
+    }
+    
 }
 
 @end

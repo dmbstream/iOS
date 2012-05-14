@@ -37,6 +37,12 @@
 		380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B6C1556D43B00DEADA4 /* YourPlaylistsViewController.xib */; };
 		380B3B721556FD6200DEADA4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B711556FD6200DEADA4 /* LoginViewController.m */; };
 		380B3B741556FD7600DEADA4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3B731556FD7600DEADA4 /* LoginView.xib */; };
+		380B3B9F1557564300DEADA4 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3B9E1557564300DEADA4 /* Service.m */; };
+		380B3BA31557574C00DEADA4 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BA21557574C00DEADA4 /* AccountService.m */; };
+		380B3BBA155DB37500DEADA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BB9155DB37500DEADA4 /* User.m */; };
+		380B3BBD155DB7A100DEADA4 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BBC155DB7A100DEADA4 /* NSDataAdditions.m */; };
+		380B3BC1155ECD7600DEADA4 /* AppSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380B3BC0155ECD7400DEADA4 /* AppSettings.plist */; };
+		380B3BC5156099CF00DEADA4 /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -111,6 +117,18 @@
 		380B3B701556FD6200DEADA4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		380B3B711556FD6200DEADA4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		380B3B731556FD7600DEADA4 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		380B3B7515573D4E00DEADA4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		380B3B9D1557564300DEADA4 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		380B3B9E1557564300DEADA4 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		380B3BA11557574C00DEADA4 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountService.h; sourceTree = "<group>"; };
+		380B3BA21557574C00DEADA4 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountService.m; sourceTree = "<group>"; };
+		380B3BB8155DB37500DEADA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		380B3BB9155DB37500DEADA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		380B3BBB155DB7A000DEADA4 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		380B3BBC155DB7A100DEADA4 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		380B3BC0155ECD7400DEADA4 /* AppSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppSettings.plist; sourceTree = "<group>"; };
+		380B3BC3156099CF00DEADA4 /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
+		380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -323,6 +341,34 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		380B3B9C1557560C00DEADA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				380B3BA01557571500DEADA4 /* Account */,
+				380B3B9D1557564300DEADA4 /* Service.h */,
+				380B3B9E1557564300DEADA4 /* Service.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		380B3BA01557571500DEADA4 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				380B3BA11557574C00DEADA4 /* AccountService.h */,
+				380B3BA21557574C00DEADA4 /* AccountService.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		380B3BC21560942100DEADA4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				380B3BC3156099CF00DEADA4 /* UITextField+Validation.h */,
+				380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		388EAF19154B44A2009F9ED9 = {
 			isa = PBXGroup;
 			children = (
@@ -358,12 +404,14 @@
 				388EAF6F154DFC12009F9ED9 /* Infrastructure */,
 				388EAF6E154DFBC5009F9ED9 /* Models */,
 				380B3B361555F0BF00DEADA4 /* Views */,
+				380B3B9C1557560C00DEADA4 /* Services */,
 				388EAF37154B44A3009F9ED9 /* AppDelegate.h */,
 				388EAF38154B44A3009F9ED9 /* AppDelegate.m */,
 				388EAF3A154B44A3009F9ED9 /* MainStoryboard_iPhone.storyboard */,
 				388EAF3D154B44A3009F9ED9 /* MainStoryboard_iPad.storyboard */,
 				388EAF2F154B44A3009F9ED9 /* Supporting Files */,
 				380B3B461556308500DEADA4 /* MainWindow.xib */,
+				380B3BC0155ECD7400DEADA4 /* AppSettings.plist */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -437,6 +485,8 @@
 		388EAF6E154DFBC5009F9ED9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				380B3BB8155DB37500DEADA4 /* User.h */,
+				380B3BB9155DB37500DEADA4 /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +494,10 @@
 		388EAF6F154DFC12009F9ED9 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				380B3BC21560942100DEADA4 /* Categories */,
+				380B3B7515573D4E00DEADA4 /* Constants.h */,
+				380B3BBB155DB7A000DEADA4 /* NSDataAdditions.h */,
+				380B3BBC155DB7A100DEADA4 /* NSDataAdditions.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -539,6 +593,7 @@
 				380B3B6B1556D43200DEADA4 /* YourFavoritesViewController.xib in Resources */,
 				380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */,
 				380B3B741556FD7600DEADA4 /* LoginView.xib in Resources */,
+				380B3BC1155ECD7600DEADA4 /* AppSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +619,11 @@
 				380B3B3F15561B9500DEADA4 /* MainMenuViewController.m in Sources */,
 				380B3B4215561D8E00DEADA4 /* ContainerViewController.m in Sources */,
 				380B3B721556FD6200DEADA4 /* LoginViewController.m in Sources */,
+				380B3B9F1557564300DEADA4 /* Service.m in Sources */,
+				380B3BA31557574C00DEADA4 /* AccountService.m in Sources */,
+				380B3BBA155DB37500DEADA4 /* User.m in Sources */,
+				380B3BBD155DB7A100DEADA4 /* NSDataAdditions.m in Sources */,
+				380B3BC5156099CF00DEADA4 /* UITextField+Validation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
