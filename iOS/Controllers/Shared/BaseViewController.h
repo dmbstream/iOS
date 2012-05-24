@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) UITextField *activeField;
+
+@property (nonatomic, strong) UIToolbar *inputAccessoryView;
+@property (nonatomic, strong) UIBarButtonItem *inputAccessoryViewPrevious;
+@property (nonatomic, strong) UIBarButtonItem *inputAccessoryViewNext;
+@property (nonatomic, strong) UIBarButtonItem *inputAccessoryViewDone;
+
+- (void)createInputAccessoryView:(BOOL)enablePrevious enableNext:(BOOL)enableNext;
+- (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)focusNextInput:(id)sender;
+- (IBAction)focusPreviousInput:(id)sender;
 
 - (void)navigateToRootView;
 - (void)navigateToSearchView;

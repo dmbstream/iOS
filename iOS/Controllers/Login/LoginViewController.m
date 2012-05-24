@@ -60,6 +60,33 @@
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+
+    [super textFieldDidBeginEditing:textField];
+
+    // Call the createInputAccessoryView method we created earlier.
+    // By doing that we will prepare the inputAccView.
+    if (super.activeField == username) {
+        [super createInputAccessoryView:NO enableNext:YES];
+    } else if (super.activeField == password) {
+        [super createInputAccessoryView:YES enableNext:NO];
+    }
+    
+    // Now add the view as an input accessory view to the selected textfield.
+    [textField setInputAccessoryView:super.inputAccessoryView];    
+}
+- (IBAction)focusNextInput:(id)sender {
+    if (super.activeField == username) {
+        [password becomeFirstResponder];
+    }
+}
+- (IBAction)focusPreviousInput:(id)sender {
+    if (super.activeField == password) {
+        [username becomeFirstResponder];
+    }
+}
+
+
 - (IBAction)login:(id)sender {
     
 
