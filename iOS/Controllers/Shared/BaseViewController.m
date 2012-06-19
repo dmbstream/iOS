@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "SearchViewController.h"
 #import "ExpandedPlayerViewController.h"
+#import "Constants.h"
 
 @interface BaseViewController ()
 
@@ -43,7 +44,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showExpandedPlayerView) name:@"ShowExpandedPlayer" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(togglePlay) name:@"TogglePlay" object:nil];
     
-    if (true) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN] != YES) {
         LoginViewController *loginController = [[LoginViewController alloc] init];
         [self presentModalViewController:loginController animated:NO];
     }
@@ -53,22 +54,45 @@
                                              selector:@selector(keyboardDidShow:) 
                                                  name:UIKeyboardDidShowNotification 
                                                object:self.view.window];
-    // register for keyboard notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(keyboardWillHide:) 
-                                                 name:UIKeyboardWillHideNotification 
+                                             selector:@selector(keyboardDidHide:) 
+                                                 name:UIKeyboardDidHideNotification 
                                                object:self.view.window];
+    
+    isKeyboardVisible = NO;
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-    NSLog(@"keyboardDidShow");
-    NSDictionary* info = [notification userInfo];
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (isKeyboardVisible)
+        return;
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
+    isKeyboardVisible = YES;
+    
+    NSLog(@"keyboardDidShow (BaseViewController)");
+
+	// Get the size of the keyboard.
+	NSDictionary* info = [notification userInfo];
+	keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    NSLog(@"keybaord size: %f", keyboardSize.height);
+    
+	// Save the current location so we can restore
+	// when keyboard is dismissed
+//	offset = scrollView.contentOffset;
+    
+	// Resize the scroll view to make room for the keyboard
+//	CGRect viewFrame = scrollView.frame;
+//	viewFrame.size.height -= keyboardSize.height;
+//	scrollView.frame = viewFrame;
+    
+//	CGRect textFieldRect = [activeField frame];
+//	textFieldRect.origin.y += 10;
+//	[scrollView scrollRectToVisible:textFieldRect animated:YES];
+    
+/*    
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your application might not need or want this behavior.
@@ -76,28 +100,39 @@
     rect.size.height -= keyboardSize.height;
     if (!CGRectContainsPoint(rect, activeField.frame.origin) ) {
         NSLog(@"Scrolling keyboard to field");
-        CGPoint scrollPoint = CGPointMake(0.0, MAX(activeField.frame.origin.y-keyboardSize.height-15, 0));
+        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-30);
+//        NSLog(@"Field origin: %f", activeField.frame.origin.y);
+//        NSLog(@"Some Other Origin: %f", [self.scrollView convertRect:activeField.frame fromView:activeField.superview].origin.y);
+//        NSLog(@"Calculated scroll: %f", activeField.frame.origin.y-keyboardSize.height-15);
+        NSLog(@"%@", NSStringFromCGPoint(scrollPoint));
         [scrollView setContentOffset:scrollPoint animated:YES];
-    }
+    }*/
 }
 
-- (void)keyboardWillHide:(NSNotification *)notification
+- (void)keyboardDidHide:(NSNotification *)notification
 {
-    NSLog(@"keyboardWillHide");
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
+    if (!isKeyboardVisible)
+        return;
+    
+    isKeyboardVisible = NO;
+    NSLog(@"keyboardDidHide (BaseViewController)");
+    
+    // Reset the frame scroll view to its original value
+//	CGRect viewFrame = scrollView.frame;
+//	viewFrame.size.height += keyboardSize.height;
+//	scrollView.frame = viewFrame;
+    
+	// Reset the scrollview to previous location
+//	scrollView.contentOffset = offset;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSLog(@"textFieldDidBeginEditing");
     activeField = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"textFieldDidEndEditing");
     activeField = nil;
 }
 
@@ -168,6 +203,13 @@
 - (IBAction)dismissKeyboard:(id)sender {
     inputAccessoryView = nil;
     [activeField resignFirstResponder];
+}
+
+- (IBAction)focusNextInput:(id)sender {
+    
+}
+- (IBAction)focusPreviousInput:(id)sender {
+    
 }
 
 #pragma mark Methods

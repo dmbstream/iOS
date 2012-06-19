@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController <UITextFieldDelegate>
+@interface BaseViewController : UIViewController <UITextFieldDelegate> {
+    CGPoint offset;
+    CGSize keyboardSize;
+    BOOL isKeyboardVisible;
+}
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
