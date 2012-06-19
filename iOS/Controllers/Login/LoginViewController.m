@@ -10,6 +10,8 @@
 #import "AccountService.h"
 #import "AppDelegate.h"
 #import "UITextField+Validation.h"
+#import "Constants.h"
+#import "LoginManager.h"
 
 @interface LoginViewController ()
 
@@ -128,7 +130,14 @@
                 NSLog(@"%@", error);
             } else {
                 NSLog(@"%@", user);
-                // TODO: Cache the user information in a plist
+
+                LoginManager *manager = [[LoginManager alloc] init];
+                manager.token = user.token;
+
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LOGGED_IN];
+                [[NSUserDefaults standardUserDefaults] setValue:user.name forKey:USER_NAME];
+                [[NSUserDefaults standardUserDefaults] setInteger:user.id forKey:USER_ID];
+                [[NSUserDefaults standardUserDefaults] setBool:user.isDonor forKey:USER_IS_DONOR];
                 [self dismissModalViewControllerAnimated:YES];
             }
         }];

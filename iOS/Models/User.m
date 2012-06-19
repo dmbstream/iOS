@@ -11,7 +11,7 @@
 @implementation User
 
 @synthesize id = _id,
-            username = _username,
+            name = _name,
             token = _token,
             isDonor = _isDonor;
 
@@ -22,16 +22,16 @@
 		return nil;
     
     self.id = (int)[json objectForKey:@"id"];
-    self.username = (NSString*)[json objectForKey:@"username"];
+    self.name = (NSString*)[json objectForKey:@"name"];
     self.token = (NSString*)[json objectForKey:@"token"];
-    self.isDonor = (BOOL)[json objectForKey:@"isDonor"];
+    self.isDonor = (BOOL)[json objectForKey:@"is_donor"];
     
     
     return self;
 }
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"%d - %@", self.id, self.username];
+    return [NSString stringWithFormat:@"%d - %@", self.id, self.name];
 }
 
 @end

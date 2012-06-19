@@ -12,12 +12,15 @@
 #import "LatestPerformedConcertsViewController.h"
 #import "YourFavoritesViewController.h"
 #import "YourPlaylistsViewController.h"
+#import "LoginManager.h"
+#import "LoginViewController.h"
 
 @interface MainMenuViewController ()
 
 @end
 
 @implementation MainMenuViewController
+@synthesize welcomeLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,11 +34,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN] && name != nil) {
+        NSMutableString *welcome = [NSMutableString stringWithString:@"Welcome "];    
+        [welcome appendString:name];
+        [welcome appendString:@"!"];
+    
+        [welcomeLabel setText:welcome];
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setWelcomeLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -85,5 +97,15 @@
     controller.managedObjectContext = self.managedObjectContext;
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)logout:(id)sender {
+    LoginManager *manager = [[LoginManager alloc] init];
+    [manager reset];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:LOGGED_IN];
+
+    LoginViewController *loginController = [[LoginViewController alloc] init];
+    [self presentModalViewController:loginController animated:NO];
 }
 @end

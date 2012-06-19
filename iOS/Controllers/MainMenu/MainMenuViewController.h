@@ -10,6 +10,7 @@
 #import "BaseViewController.h"
 
 @interface MainMenuViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 - (IBAction)chat:(id)sender;
 - (IBAction)latestAddedConcerts:(id)sender;
 - (IBAction)latestPerformedConcerts:(id)sender;
@@ -17,5 +18,6 @@
 - (IBAction)randomConcert:(id)sender;
 - (IBAction)yourFavorites:(id)sender;
 - (IBAction)yourPlaylists:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end

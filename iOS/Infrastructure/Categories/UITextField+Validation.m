@@ -46,7 +46,7 @@
 
 - (BOOL)validEmailAddress
 {
-    return [self validateRegEx:@"^[a-z0-9_\\-\\.]{1,15}@[a-z0-9_\\-]+\\.[a-z]{2,}$"];
+    return [self validateRegEx:@"^[A-Z0-9a-z._%\\+\\-]+@[A-Za-z0-9\\.\\-]+\\.[A-Za-z]{2,4}$"];
 }
 
 @end

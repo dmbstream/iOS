@@ -11,7 +11,7 @@
 @interface User : NSObject { }
 
 @property int id;
-@property NSString *username;
+@property NSString *name;
 @property BOOL isDonor;
 @property NSString *token;
 

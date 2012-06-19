@@ -11,5 +11,10 @@
 
 #define API_URL @"http://dmbstream.com/api/"
 
+#define LOGGED_IN @"LoggedIn"
+#define USER_NAME @"UserName"
+#define USER_ID @"UserId"
+#define USER_IS_DONOR @"UserIsDonor"
+
 
 #endif

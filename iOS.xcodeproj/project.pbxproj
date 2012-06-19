@@ -43,6 +43,9 @@
 		380B3BBD155DB7A100DEADA4 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BBC155DB7A100DEADA4 /* NSDataAdditions.m */; };
 		380B3BC5156099CF00DEADA4 /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */; };
 		380B3BC91560B11300DEADA4 /* AppSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380B3BC81560B0D800DEADA4 /* AppSettings.plist */; };
+		380B3C0C1573C65000DEADA4 /* KeyChainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C0B1573C65000DEADA4 /* KeyChainItemWrapper.m */; };
+		380B3C0F1573C69500DEADA4 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C0E1573C69400DEADA4 /* LoginManager.m */; };
+		380B3C15158FF8EA00DEADA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380B3C14158FF8E800DEADA4 /* Security.framework */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -129,6 +132,11 @@
 		380B3BC3156099CF00DEADA4 /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
 		380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		380B3BC81560B0D800DEADA4 /* AppSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppSettings.plist; sourceTree = "<group>"; };
+		380B3C0A1573C65000DEADA4 /* KeyChainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainItemWrapper.h; sourceTree = "<group>"; };
+		380B3C0B1573C65000DEADA4 /* KeyChainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainItemWrapper.m; sourceTree = "<group>"; };
+		380B3C0D1573C69400DEADA4 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		380B3C0E1573C69400DEADA4 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		380B3C14158FF8E800DEADA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380B3C15158FF8EA00DEADA4 /* Security.framework in Frameworks */,
 				388EAF29154B44A3009F9ED9 /* UIKit.framework in Frameworks */,
 				388EAF2B154B44A3009F9ED9 /* Foundation.framework in Frameworks */,
 				388EAF2D154B44A3009F9ED9 /* CoreGraphics.framework in Frameworks */,
@@ -369,9 +378,21 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		380B3C091573C60C00DEADA4 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				380B3C0A1573C65000DEADA4 /* KeyChainItemWrapper.h */,
+				380B3C0B1573C65000DEADA4 /* KeyChainItemWrapper.m */,
+				380B3C0D1573C69400DEADA4 /* LoginManager.h */,
+				380B3C0E1573C69400DEADA4 /* LoginManager.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
 		388EAF19154B44A2009F9ED9 = {
 			isa = PBXGroup;
 			children = (
+				380B3C14158FF8E800DEADA4 /* Security.framework */,
 				388EAF2E154B44A3009F9ED9 /* iOS */,
 				388EAF67154DFAE4009F9ED9 /* Resources */,
 				388EAF27154B44A3009F9ED9 /* Frameworks */,
@@ -494,6 +515,7 @@
 		388EAF6F154DFC12009F9ED9 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				380B3C091573C60C00DEADA4 /* Security */,
 				380B3BC21560942100DEADA4 /* Categories */,
 				380B3B7515573D4E00DEADA4 /* Constants.h */,
 				380B3BBB155DB7A000DEADA4 /* NSDataAdditions.h */,
@@ -624,6 +646,8 @@
 				380B3BBA155DB37500DEADA4 /* User.m in Sources */,
 				380B3BBD155DB7A100DEADA4 /* NSDataAdditions.m in Sources */,
 				380B3BC5156099CF00DEADA4 /* UITextField+Validation.m in Sources */,
+				380B3C0C1573C65000DEADA4 /* KeyChainItemWrapper.m in Sources */,
+				380B3C0F1573C69500DEADA4 /* LoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
