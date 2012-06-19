@@ -20,4 +20,6 @@
 - (IBAction)yourPlaylists:(id)sender;
 - (IBAction)logout:(id)sender;
 
+- (void)refreshWelcomeText;
+
 @end

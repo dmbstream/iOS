@@ -34,15 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN] && name != nil) {
-        NSMutableString *welcome = [NSMutableString stringWithString:@"Welcome "];    
-        [welcome appendString:name];
-        [welcome appendString:@"!"];
     
-        [welcomeLabel setText:welcome];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWelcomeText) name:EVENT_LOGGED_IN object:nil];
+
+	[self refreshWelcomeText];
 }
 
 - (void)viewDidUnload
@@ -50,12 +45,37 @@
     [self setWelcomeLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark Events
+
+- (void)refreshWelcomeText {
+    NSLog(@"refreshWelcomeText");
+    
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN] && name != nil) {
+        NSMutableString *welcome = [NSMutableString stringWithString:@"Welcome "];    
+        [welcome appendString:name];
+        [welcome appendString:@"!"];
+        
+        [welcomeLabel setText:welcome];
+    }
+ 
+}
+
+#pragma mark Actions
 
 - (IBAction)chat:(id)sender {
     ChatViewController *controller = [[ChatViewController alloc] init];

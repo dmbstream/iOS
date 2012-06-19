@@ -16,5 +16,7 @@
 #define USER_ID @"UserId"
 #define USER_IS_DONOR @"UserIsDonor"
 
+#define EVENT_LOGGED_IN @"User.LoggedIn"
+
 
 #endif

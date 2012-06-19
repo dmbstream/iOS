@@ -138,6 +138,9 @@
                 [[NSUserDefaults standardUserDefaults] setValue:user.name forKey:USER_NAME];
                 [[NSUserDefaults standardUserDefaults] setInteger:user.id forKey:USER_ID];
                 [[NSUserDefaults standardUserDefaults] setBool:user.isDonor forKey:USER_IS_DONOR];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_LOGGED_IN object:self];
+                
                 [self dismissModalViewControllerAnimated:YES];
             }
         }];
