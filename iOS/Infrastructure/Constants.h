@@ -17,6 +17,11 @@
 #define USER_IS_DONOR @"UserIsDonor"
 
 #define EVENT_LOGGED_IN @"User.LoggedIn"
+#define EVENT_NAV_HOME @"Nav.Home"
+#define EVENT_NAV_SEARCH @"Nav.Search"
+
+#define EVENT_PLAYER_EXPAND @"Player.Expand"
+#define EVENT_PLAYER_PLAY @"Player.Play"
 
 
 #endif

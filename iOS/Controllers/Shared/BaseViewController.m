@@ -38,11 +38,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"baseviewcontroller:viewdidload");
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToRootView) name:@"RootViewRequested" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToSearchView) name:@"SearchViewRequested" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showExpandedPlayerView) name:@"ShowExpandedPlayer" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(togglePlay) name:@"TogglePlay" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(togglePlay) name:EVENT_PLAYER_PLAY object:nil];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN] != YES) {
         LoginViewController *loginController = [[LoginViewController alloc] init];
@@ -50,16 +48,37 @@
     }
     
     // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:UIKeyboardWillShowNotification 
+                                                  object:nil]; 
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(keyboardDidShow:) 
                                                  name:UIKeyboardDidShowNotification 
                                                object:self.view.window];
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:UIKeyboardWillHideNotification 
+                                                  object:nil];  
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(keyboardDidHide:) 
                                                  name:UIKeyboardDidHideNotification 
                                                object:self.view.window];
     
     isKeyboardVisible = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"viewDidAppear");
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToRootView) name:EVENT_NAV_HOME object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateToSearchView) name:EVENT_NAV_SEARCH object:nil];    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showExpandedPlayerView) name:EVENT_PLAYER_EXPAND object:nil];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"viewDidDisappear");
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_NAV_HOME object:nil]; 
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_NAV_SEARCH object:nil];     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_PLAYER_EXPAND object:nil]; 
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification
@@ -140,8 +159,13 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
+    NSLog(@"baseviewcontroller:viewDidUnload");
+    
 
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SearchViewRequested" object:nil];
 
     // unregister for keyboard notifications while not visible.
     [[NSNotificationCenter defaultCenter] removeObserver:self 

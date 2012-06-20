@@ -7,6 +7,7 @@
 //
 
 #import "FooterViewController.h"
+#import "Constants.h"
 
 @interface FooterViewController ()
 
@@ -54,11 +55,11 @@
 }
 
 - (IBAction)togglePlay:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"TogglePlay" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_PLAYER_PLAY object:self];
 }
 
 - (IBAction)showExpandedPlayer:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowExpandedPlayer" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_PLAYER_EXPAND object:self];
 }
 
 - (void)refreshPlayPauseButton {

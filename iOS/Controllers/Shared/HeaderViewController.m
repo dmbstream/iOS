@@ -7,6 +7,7 @@
 //
 
 #import "HeaderViewController.h"
+#import "Constants.h"
 
 @interface HeaderViewController ()
 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"header:viewdidload");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -42,11 +44,11 @@
 
 - (IBAction)search:(id)sender {
     NSLog(@"search button clicked");
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SearchViewRequested" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_NAV_SEARCH object:self];
 }
 
 - (IBAction)backToRootView:(id)sender {
     NSLog(@"home button clicked");
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"RootViewRequested" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_NAV_HOME object:self];
 }
 @end
