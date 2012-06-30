@@ -12,6 +12,7 @@
     CGPoint offset;
     CGSize keyboardSize;
     BOOL isKeyboardVisible;
+    int originalScrollViewHeight;
 }
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

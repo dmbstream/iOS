@@ -63,6 +63,8 @@
                                                  name:UIKeyboardDidHideNotification 
                                                object:self.view.window];
     
+    scrollView.contentSize = scrollView.frame.size;
+    
     isKeyboardVisible = NO;
 }
 
@@ -93,39 +95,24 @@
 	// Get the size of the keyboard.
 	NSDictionary* info = [notification userInfo];
 	keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    NSLog(@"keybaord size: %f", keyboardSize.height);
-    
-	// Save the current location so we can restore
-	// when keyboard is dismissed
-//	offset = scrollView.contentOffset;
     
 	// Resize the scroll view to make room for the keyboard
-//	CGRect viewFrame = scrollView.frame;
-//	viewFrame.size.height -= keyboardSize.height;
-//	scrollView.frame = viewFrame;
     
-//	CGRect textFieldRect = [activeField frame];
-//	textFieldRect.origin.y += 10;
-//	[scrollView scrollRectToVisible:textFieldRect animated:YES];
+    // Assume two headers at 44px each
+    int availableSize = 372 - keyboardSize.height;
     
-/*    
-//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
-//    scrollView.contentInset = contentInsets;
-//    scrollView.scrollIndicatorInsets = contentInsets;
+    originalScrollViewHeight = scrollView.frame.size.height;
     
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-    CGRect rect = scrollView.frame;
-    rect.size.height -= keyboardSize.height;
-    if (!CGRectContainsPoint(rect, activeField.frame.origin) ) {
-        NSLog(@"Scrolling keyboard to field");
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-30);
-//        NSLog(@"Field origin: %f", activeField.frame.origin.y);
-//        NSLog(@"Some Other Origin: %f", [self.scrollView convertRect:activeField.frame fromView:activeField.superview].origin.y);
-//        NSLog(@"Calculated scroll: %f", activeField.frame.origin.y-keyboardSize.height-15);
-        NSLog(@"%@", NSStringFromCGPoint(scrollPoint));
-        [scrollView setContentOffset:scrollPoint animated:YES];
-    }*/
+	CGRect viewFrame = scrollView.frame;
+    if (originalScrollViewHeight > availableSize) {
+        viewFrame.size.height = availableSize;
+        scrollView.frame = viewFrame;
+    }
+    
+    
+	CGRect textFieldRect = [activeField frame];
+	textFieldRect.origin.y += 40;
+	[scrollView scrollRectToVisible:textFieldRect animated:YES];    
 }
 
 - (void)keyboardDidHide:(NSNotification *)notification
@@ -136,13 +123,12 @@
     isKeyboardVisible = NO;
     NSLog(@"keyboardDidHide (BaseViewController)");
     
-    // Reset the frame scroll view to its original value
-//	CGRect viewFrame = scrollView.frame;
-//	viewFrame.size.height += keyboardSize.height;
-//	scrollView.frame = viewFrame;
     
-	// Reset the scrollview to previous location
-//	scrollView.contentOffset = offset;
+	CGRect viewFrame = scrollView.frame;
+    if (originalScrollViewHeight > 0) {
+        viewFrame.size.height = originalScrollViewHeight;
+        scrollView.frame = viewFrame;
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
