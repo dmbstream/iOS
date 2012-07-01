@@ -85,7 +85,7 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-    if (isKeyboardVisible)
+    if (isKeyboardVisible || activeField == nil)
         return;
     
     isKeyboardVisible = YES;
@@ -104,15 +104,16 @@
     originalScrollViewHeight = scrollView.frame.size.height;
     
 	CGRect viewFrame = scrollView.frame;
+    NSLog(@"%@", NSStringFromCGSize(viewFrame.size));
     if (originalScrollViewHeight > availableSize) {
         viewFrame.size.height = availableSize;
         scrollView.frame = viewFrame;
     }
+    NSLog(@"%@", NSStringFromCGSize(viewFrame.size));
     
-    
-	CGRect textFieldRect = [activeField frame];
-	textFieldRect.origin.y += 40;
-	[scrollView scrollRectToVisible:textFieldRect animated:YES];    
+    CGRect textFieldRect = [activeField frame];
+    textFieldRect.origin.y += 40;
+    [scrollView scrollRectToVisible:textFieldRect animated:YES];    
 }
 
 - (void)keyboardDidHide:(NSNotification *)notification
@@ -125,10 +126,12 @@
     
     
 	CGRect viewFrame = scrollView.frame;
+    NSLog(@"%@", NSStringFromCGSize(viewFrame.size));
     if (originalScrollViewHeight > 0) {
         viewFrame.size.height = originalScrollViewHeight;
         scrollView.frame = viewFrame;
     }
+    NSLog(@"%@", NSStringFromCGSize(viewFrame.size));
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
