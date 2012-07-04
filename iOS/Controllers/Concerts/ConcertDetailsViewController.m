@@ -16,6 +16,7 @@
 
 @implementation ConcertDetailsViewController
 @synthesize concertId;
+@synthesize lastConcertId;
 @synthesize title;
 @synthesize artist;
 @synthesize date;
@@ -50,11 +51,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"viewWillAppear");
+    
+    // If we have just shown this concert, no need to reload it from the site
+    if (self.lastConcertId != nil && self.concertId == self.lastConcertId)
+        return;
+            
     super.scrollView.hidden = YES;
     
     // Show loading spinner
     [super showActivityIndicator];
-
+    
     ConcertService *service = [ConcertService new];
 
     [service getConcert:concertId completionHandler:^(Concert* concert, NSError* error) {
@@ -69,6 +75,10 @@
         } else {
             NSLog(@"%@", concert);
             
+            // Make sure that we know the displayed concert id, if this was a random concert
+            concertId = concert.id;
+            // Set the last concert id so that we do not reload unnecessarily
+            lastConcertId = concert.id;
             
             NSDateFormatter *titleFormatter = [[NSDateFormatter alloc] init];
             [titleFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -82,6 +92,9 @@
             [formatter setDateStyle:NSDateFormatterLongStyle];
             [formatter setTimeStyle:NSDateFormatterNoStyle];
             [date setText:[formatter stringFromDate:concert.date]];
+            
+            // Populate the track table now
+            
             
             super.scrollView.hidden = NO;
         }

@@ -11,7 +11,8 @@
 
 @interface ConcertDetailsViewController : BaseViewController
 
-@property(nonatomic) NSString *concertId;
+@property (nonatomic) NSString *concertId;
+@property (nonatomic) NSString *lastConcertId;
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *artist;
