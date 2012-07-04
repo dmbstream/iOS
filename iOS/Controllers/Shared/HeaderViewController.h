@@ -10,7 +10,11 @@
 
 @interface HeaderViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 - (IBAction)search:(id)sender;
 - (IBAction)backToRootView:(id)sender;
+
+- (void)showActivityIndicator;
+- (void)hideActivityIndicator;
 
 @end

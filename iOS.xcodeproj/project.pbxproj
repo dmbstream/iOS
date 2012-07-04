@@ -46,6 +46,12 @@
 		380B3C0C1573C65000DEADA4 /* KeyChainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C0B1573C65000DEADA4 /* KeyChainItemWrapper.m */; };
 		380B3C0F1573C69500DEADA4 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C0E1573C69400DEADA4 /* LoginManager.m */; };
 		380B3C15158FF8EA00DEADA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380B3C14158FF8E800DEADA4 /* Security.framework */; };
+		380B3C1E15A2B07200DEADA4 /* Volume High.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C1A15A2B07200DEADA4 /* Volume High.png */; };
+		380B3C1F15A2B07200DEADA4 /* Volume High@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C1B15A2B07200DEADA4 /* Volume High@2x.png */; };
+		380B3C2615A2B57200DEADA4 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C2415A2B57200DEADA4 /* Add.png */; };
+		380B3C2715A2B57200DEADA4 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C2515A2B57200DEADA4 /* Add@2x.png */; };
+		380B3C2D15A3D38500DEADA4 /* ConcertDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C2C15A3D38500DEADA4 /* ConcertDetailsViewController.m */; };
+		380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C2E15A3D42400DEADA4 /* ConcertDetailsView.xib */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -137,6 +143,13 @@
 		380B3C0D1573C69400DEADA4 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		380B3C0E1573C69400DEADA4 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		380B3C14158FF8E800DEADA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		380B3C1A15A2B07200DEADA4 /* Volume High.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume High.png"; sourceTree = "<group>"; };
+		380B3C1B15A2B07200DEADA4 /* Volume High@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume High@2x.png"; sourceTree = "<group>"; };
+		380B3C2415A2B57200DEADA4 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
+		380B3C2515A2B57200DEADA4 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		380B3C2B15A3D38400DEADA4 /* ConcertDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcertDetailsViewController.h; sourceTree = "<group>"; };
+		380B3C2C15A3D38500DEADA4 /* ConcertDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcertDetailsViewController.m; sourceTree = "<group>"; };
+		380B3C2E15A3D42400DEADA4 /* ConcertDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConcertDetailsView.xib; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -220,6 +233,8 @@
 				380B3B201554799F00DEADA4 /* LatestPerformedConcertsViewController.m */,
 				380B3B22155479B200DEADA4 /* LatestAddedConcertsViewController.h */,
 				380B3B23155479B200DEADA4 /* LatestAddedConcertsViewController.m */,
+				380B3C2B15A3D38400DEADA4 /* ConcertDetailsViewController.h */,
+				380B3C2C15A3D38500DEADA4 /* ConcertDetailsViewController.m */,
 			);
 			path = Concerts;
 			sourceTree = "<group>";
@@ -305,6 +320,7 @@
 			children = (
 				380B3B611556C75F00DEADA4 /* LatestPerformedConcertsView.xib */,
 				380B3B631556C76E00DEADA4 /* LatestAddedConcertsView.xib */,
+				380B3C2E15A3D42400DEADA4 /* ConcertDetailsView.xib */,
 			);
 			path = Concerts;
 			sourceTree = "<group>";
@@ -459,6 +475,10 @@
 		388EAF68154DFB5E009F9ED9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				380B3C2415A2B57200DEADA4 /* Add.png */,
+				380B3C2515A2B57200DEADA4 /* Add@2x.png */,
+				380B3C1A15A2B07200DEADA4 /* Volume High.png */,
+				380B3C1B15A2B07200DEADA4 /* Volume High@2x.png */,
 				380B3B5E1556BCF100DEADA4 /* resizerVertical.png */,
 				380B3B52155661BB00DEADA4 /* toolbar_pause.png */,
 				380B3B53155661BB00DEADA4 /* toolbar_pause@2x.png */,
@@ -616,6 +636,11 @@
 				380B3B6D1556D43B00DEADA4 /* YourPlaylistsViewController.xib in Resources */,
 				380B3B741556FD7600DEADA4 /* LoginView.xib in Resources */,
 				380B3BC91560B11300DEADA4 /* AppSettings.plist in Resources */,
+				380B3C1E15A2B07200DEADA4 /* Volume High.png in Resources */,
+				380B3C1F15A2B07200DEADA4 /* Volume High@2x.png in Resources */,
+				380B3C2615A2B57200DEADA4 /* Add.png in Resources */,
+				380B3C2715A2B57200DEADA4 /* Add@2x.png in Resources */,
+				380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +673,7 @@
 				380B3BC5156099CF00DEADA4 /* UITextField+Validation.m in Sources */,
 				380B3C0C1573C65000DEADA4 /* KeyChainItemWrapper.m in Sources */,
 				380B3C0F1573C69500DEADA4 /* LoginManager.m in Sources */,
+				380B3C2D15A3D38500DEADA4 /* ConcertDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

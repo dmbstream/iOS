@@ -18,6 +18,7 @@
 @end
 
 @implementation LoginViewController
+@synthesize activityIndicator;
 @synthesize username;
 @synthesize password;
 
@@ -42,6 +43,7 @@
 {
     [self setUsername:nil];
     [self setPassword:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -113,6 +115,7 @@
     
     if (isValid) 
     {
+        self.activityIndicator.hidden = NO;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
         [appDelegate requestNetworkActivityIndicator];
@@ -120,6 +123,8 @@
     
         [service getUser:[username text] password:[password text] completionHandler:^(User* user, NSError* error) {
             [appDelegate releaseNetworkActivityIndicator];
+            self.activityIndicator.hidden = YES;
+
             if (error) {
                 NSMutableString *message = [[NSMutableString alloc] initWithString: @"The specific username or password was incorrect.  "];
 //                [message appendString:[error localizedDescription]];

@@ -33,5 +33,7 @@
 - (void)navigateToSearchView;
 - (void)showExpandedPlayerView;
 - (void)togglePlay;
+- (void)showActivityIndicator;
+- (void)hideActivityIndicator;
 
 @end

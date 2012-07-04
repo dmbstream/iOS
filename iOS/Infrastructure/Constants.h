@@ -16,6 +16,11 @@
 #define USER_ID @"UserId"
 #define USER_IS_DONOR @"UserIsDonor"
 
+#define CONCERT_RANDOM_ID @"__random__"
+
+#define EVENT_ACTIVITY_SHOW @"ActivityIndicator.Show"
+#define EVENT_ACTIVITY_HIDE @"ActivityIndicator.Hide"
+
 #define EVENT_LOGGED_IN @"User.LoggedIn"
 #define EVENT_NAV_HOME @"Nav.Home"
 #define EVENT_NAV_SEARCH @"Nav.Search"

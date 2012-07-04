@@ -7,6 +7,7 @@
 //
 
 #import "HeaderViewController.h"
+#import "AppDelegate.h"
 #import "Constants.h"
 
 @interface HeaderViewController ()
@@ -14,6 +15,7 @@
 @end
 
 @implementation HeaderViewController
+@synthesize activityIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +35,25 @@
 
 - (void)viewDidUnload
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+ 
+    [self setActivityIndicator:nil];    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"viewDidAppear");
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showActivityIndicator) name:EVENT_ACTIVITY_SHOW object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideActivityIndicator) name:EVENT_ACTIVITY_HIDE object:nil];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"viewDidDisappear");
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_ACTIVITY_SHOW object:nil]; 
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:EVENT_ACTIVITY_HIDE object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -51,4 +70,16 @@
     NSLog(@"home button clicked");
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_NAV_HOME object:self];
 }
+
+- (void)showActivityIndicator {
+    self.activityIndicator.hidden = NO;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate requestNetworkActivityIndicator];
+}
+- (void)hideActivityIndicator {
+    self.activityIndicator.hidden = YES;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate releaseNetworkActivityIndicator];
+}
+
 @end

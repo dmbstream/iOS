@@ -249,5 +249,11 @@
 - (void)togglePlay {
     NSLog(@"togglePlay");
 }
+- (void)showActivityIndicator {
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_ACTIVITY_SHOW object:self];
+}
+- (void)hideActivityIndicator {
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_ACTIVITY_HIDE object:self];
+}
 
 @end

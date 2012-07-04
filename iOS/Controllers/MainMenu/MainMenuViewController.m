@@ -10,6 +10,7 @@
 #import "ChatViewController.h"
 #import "LatestAddedConcertsViewController.h"
 #import "LatestPerformedConcertsViewController.h"
+#import "ConcertDetailsViewController.h"
 #import "YourFavoritesViewController.h"
 #import "YourPlaylistsViewController.h"
 #import "LoginManager.h"
@@ -103,6 +104,11 @@
 }
 
 - (IBAction)randomConcert:(id)sender {
+    ConcertDetailsViewController *controller = [[ConcertDetailsViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    controller.concertId = CONCERT_RANDOM_ID;
+
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)yourFavorites:(id)sender {
