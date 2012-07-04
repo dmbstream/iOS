@@ -72,21 +72,21 @@
 	UIApplication* app = [UIApplication sharedApplication];
 	app.networkActivityIndicatorVisible = YES;
     
-	self.netActivityReqs++;
+//	self.netActivityReqs++;
 }
 
 -(void) releaseNetworkActivityIndicator {
     
-	self.netActivityReqs--;
-	if(self.netActivityReqs <= 0)
-	{
+//	self.netActivityReqs--;
+//	if(self.netActivityReqs <= 0)
+//	{
 		UIApplication* app = [UIApplication sharedApplication];
 		app.networkActivityIndicatorVisible = NO;
-	}
+//	}
     
 	//failsafe
-	if(self.netActivityReqs < 0)
-		self.netActivityReqs = 0;
+//	if(self.netActivityReqs < 0)
+//		self.netActivityReqs = 0;
 }
 
 @end

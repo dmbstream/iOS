@@ -52,6 +52,13 @@
 		380B3C2715A2B57200DEADA4 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C2515A2B57200DEADA4 /* Add@2x.png */; };
 		380B3C2D15A3D38500DEADA4 /* ConcertDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C2C15A3D38500DEADA4 /* ConcertDetailsViewController.m */; };
 		380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C2E15A3D42400DEADA4 /* ConcertDetailsView.xib */; };
+		380B3C3315A4C9A100DEADA4 /* ConcertService.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3215A4C9A000DEADA4 /* ConcertService.m */; };
+		380B3C3615A4CA6A00DEADA4 /* Concert.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3515A4CA6A00DEADA4 /* Concert.m */; };
+		380B3C3915A4D57100DEADA4 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3815A4D57100DEADA4 /* Artist.m */; };
+		380B3C3C15A4D64500DEADA4 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3B15A4D64400DEADA4 /* Tour.m */; };
+		380B3C3F15A4DA5800DEADA4 /* DotNetDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3E15A4DA5500DEADA4 /* DotNetDateFormatter.m */; };
+		380B3C6B15A4E63900DEADA4 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C6A15A4E63800DEADA4 /* Track.m */; };
+		380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C6D15A4EC6A00DEADA4 /* Venue.m */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -150,6 +157,20 @@
 		380B3C2B15A3D38400DEADA4 /* ConcertDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcertDetailsViewController.h; sourceTree = "<group>"; };
 		380B3C2C15A3D38500DEADA4 /* ConcertDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcertDetailsViewController.m; sourceTree = "<group>"; };
 		380B3C2E15A3D42400DEADA4 /* ConcertDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConcertDetailsView.xib; sourceTree = "<group>"; };
+		380B3C3115A4C9A000DEADA4 /* ConcertService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcertService.h; sourceTree = "<group>"; };
+		380B3C3215A4C9A000DEADA4 /* ConcertService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcertService.m; sourceTree = "<group>"; };
+		380B3C3415A4CA6A00DEADA4 /* Concert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concert.h; sourceTree = "<group>"; };
+		380B3C3515A4CA6A00DEADA4 /* Concert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concert.m; sourceTree = "<group>"; };
+		380B3C3715A4D57100DEADA4 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		380B3C3815A4D57100DEADA4 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		380B3C3A15A4D64300DEADA4 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		380B3C3B15A4D64400DEADA4 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
+		380B3C3D15A4DA5400DEADA4 /* DotNetDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotNetDateFormatter.h; sourceTree = "<group>"; };
+		380B3C3E15A4DA5500DEADA4 /* DotNetDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotNetDateFormatter.m; sourceTree = "<group>"; };
+		380B3C6915A4E63700DEADA4 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		380B3C6A15A4E63800DEADA4 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		380B3C6C15A4EC6900DEADA4 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		380B3C6D15A4EC6A00DEADA4 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -372,6 +393,8 @@
 				380B3BA01557571500DEADA4 /* Account */,
 				380B3B9D1557564300DEADA4 /* Service.h */,
 				380B3B9E1557564300DEADA4 /* Service.m */,
+				380B3C3115A4C9A000DEADA4 /* ConcertService.h */,
+				380B3C3215A4C9A000DEADA4 /* ConcertService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -528,6 +551,16 @@
 			children = (
 				380B3BB8155DB37500DEADA4 /* User.h */,
 				380B3BB9155DB37500DEADA4 /* User.m */,
+				380B3C3415A4CA6A00DEADA4 /* Concert.h */,
+				380B3C3515A4CA6A00DEADA4 /* Concert.m */,
+				380B3C3715A4D57100DEADA4 /* Artist.h */,
+				380B3C3815A4D57100DEADA4 /* Artist.m */,
+				380B3C3A15A4D64300DEADA4 /* Tour.h */,
+				380B3C3B15A4D64400DEADA4 /* Tour.m */,
+				380B3C6915A4E63700DEADA4 /* Track.h */,
+				380B3C6A15A4E63800DEADA4 /* Track.m */,
+				380B3C6C15A4EC6900DEADA4 /* Venue.h */,
+				380B3C6D15A4EC6A00DEADA4 /* Venue.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -540,6 +573,8 @@
 				380B3B7515573D4E00DEADA4 /* Constants.h */,
 				380B3BBB155DB7A000DEADA4 /* NSDataAdditions.h */,
 				380B3BBC155DB7A100DEADA4 /* NSDataAdditions.m */,
+				380B3C3D15A4DA5400DEADA4 /* DotNetDateFormatter.h */,
+				380B3C3E15A4DA5500DEADA4 /* DotNetDateFormatter.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -674,6 +709,13 @@
 				380B3C0C1573C65000DEADA4 /* KeyChainItemWrapper.m in Sources */,
 				380B3C0F1573C69500DEADA4 /* LoginManager.m in Sources */,
 				380B3C2D15A3D38500DEADA4 /* ConcertDetailsViewController.m in Sources */,
+				380B3C3315A4C9A100DEADA4 /* ConcertService.m in Sources */,
+				380B3C3615A4CA6A00DEADA4 /* Concert.m in Sources */,
+				380B3C3915A4D57100DEADA4 /* Artist.m in Sources */,
+				380B3C3C15A4D64500DEADA4 /* Tour.m in Sources */,
+				380B3C3F15A4DA5800DEADA4 /* DotNetDateFormatter.m in Sources */,
+				380B3C6B15A4E63900DEADA4 /* Track.m in Sources */,
+				380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
