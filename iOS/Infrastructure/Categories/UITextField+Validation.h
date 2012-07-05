@@ -14,5 +14,7 @@
 - (BOOL)validZipCode;
 - (BOOL)validPhoneNumber;
 - (BOOL)validEmailAddress;
+- (BOOL)validUsername;
+- (BOOL)validPassword;
 
 @end

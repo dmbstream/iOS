@@ -49,4 +49,24 @@
     return [self validateRegEx:@"^[A-Z0-9a-z._%\\+\\-]+@[A-Za-z0-9\\.\\-]+\\.[A-Za-z]{2,4}$"];
 }
 
+- (BOOL)validPassword
+{
+    if([self.text length] > 5)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)validUsername
+{
+    if([self.text length] > 2)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

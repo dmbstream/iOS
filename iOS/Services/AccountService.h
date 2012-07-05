@@ -13,5 +13,6 @@
 
 - (void)getUser:(NSString*)username password:(NSString*)password completionHandler:(void (^)(User*, NSError *))completionHandler;
 - (void)getUser:(NSString*)token completionHandler:(void (^)(User*, NSError *))completionHandler;
+- (void)registerUser:(NSString*)username email:(NSString*)email password:(NSString*)password completionHandler:(void (^)(User*, NSError *))completionHandler;
 
 @end

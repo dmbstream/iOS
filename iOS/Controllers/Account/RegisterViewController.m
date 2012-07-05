@@ -1,26 +1,27 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  iOS
 //
-//  Created by James Geurts on 5/6/12.
+//  Created by James Geurts on 7/5/12.
 //  Copyright (c) 2012 Bia Creations. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "RegisterViewController.h"
 #import "AccountService.h"
 #import "AppDelegate.h"
 #import "UITextField+Validation.h"
 #import "Constants.h"
 #import "LoginManager.h"
-#import "RegisterViewController.h"
 
-@interface LoginViewController ()
+@interface RegisterViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation RegisterViewController
+
 @synthesize activityIndicator;
 @synthesize username;
+@synthesize email;
 @synthesize password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,26 +36,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     username.delegate = self;
+    email.delegate = self;
     password.delegate = self;
 }
 
 - (void)viewDidUnload
 {
     [self setUsername:nil];
+    [self setEmail:nil];
     [self setPassword:nil];
     [self setActivityIndicator:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"viewDidAppear::Login");
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:LOGGED_IN]) {
-        [self dismissModalViewControllerAnimated:NO];
-    }    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -65,22 +60,26 @@
 - (BOOL)textFieldShouldReturn:(UITextField*)_textField
 {
     if (_textField == username) {
+        [email becomeFirstResponder];        
+    } else if (_textField == email) {
         [password becomeFirstResponder];        
     } else if (_textField == password) {
         [password resignFirstResponder];
-        [self login:password];
+        [self createAccount:password];
     }
     return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-
+    
     [super textFieldDidBeginEditing:textField];
-
+    
     // Call the createInputAccessoryView method we created earlier.
     // By doing that we will prepare the inputAccView.
     if (super.activeField == username) {
         [super createInputAccessoryView:NO enableNext:YES];
+    } else if (super.activeField == email) {
+        [super createInputAccessoryView:YES enableNext:YES];
     } else if (super.activeField == password) {
         [super createInputAccessoryView:YES enableNext:NO];
     }
@@ -90,35 +89,45 @@
 }
 - (IBAction)focusNextInput:(id)sender {
     if (super.activeField == username) {
+        [email becomeFirstResponder];
+    } else if (super.activeField == email) {
         [password becomeFirstResponder];
     }
+
 }
 - (IBAction)focusPreviousInput:(id)sender {
-    if (super.activeField == password) {
+    if (super.activeField == email) {
         [username becomeFirstResponder];
+    } else if (super.activeField == password) {
+        [email becomeFirstResponder];
     }
 }
 
 
-- (IBAction)login:(id)sender {
+- (IBAction)createAccount:(id)sender {
     
-
     BOOL isValid = TRUE;
     NSString *userErrors = [[NSString alloc] initWithString:@""];
     
-    if(![username requiredText])
+    if(![username requiredText] || ![username validUsername])
     {
         isValid = FALSE;
         [username becomeFirstResponder];
-        userErrors = [userErrors stringByAppendingString:@"Username is required. \r\n"];
+        userErrors = [userErrors stringByAppendingString:@"A Username of at least 3 characters is required. \r\n"];
     }
-    if(![password requiredText])
+    if(![email requiredText] || ![email validEmailAddress])
+    {
+        isValid = FALSE;
+        [email becomeFirstResponder];
+        userErrors = [userErrors stringByAppendingString:@"A valid email address is required. \r\n"];
+    }
+    if(![password requiredText] || ![password validPassword])
     {
         if (isValid) 
         {
             [password becomeFirstResponder];
         }
-        userErrors = [userErrors stringByAppendingString:@"Password is required. \r\n"];
+        userErrors = [userErrors stringByAppendingString:@"A valid password of at least 6 characters is required. \r\n"];
         isValid = FALSE;
     }
     
@@ -126,35 +135,37 @@
     {
         self.activityIndicator.hidden = NO;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+        
         [appDelegate requestNetworkActivityIndicator];
         AccountService *service = [AccountService new];
-    
-        [service getUser:[username text] password:[password text] completionHandler:^(User* user, NSError* error) {
+
+      
+        [service registerUser:[username text] email:[email text] password:[password text] completionHandler:^(User* user, NSError* error) {
             [appDelegate releaseNetworkActivityIndicator];
             self.activityIndicator.hidden = YES;
-
-            if (error) {
-                NSMutableString *message = [[NSMutableString alloc] initWithString: @"The specific username or password was incorrect.  "];
-//                [message appendString:[error localizedDescription]];
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
+            if (error) {
+                NSMutableString *message = [[NSMutableString alloc] initWithString: @"Unable to register at this time:  \r\n"];
+                [message appendString:[error localizedDescription]];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                
                 [alertView show];
-
+                
                 NSLog(@"%@", error);
             } else {
                 NSLog(@"%@", user);
-
+                
                 LoginManager *manager = [[LoginManager alloc] init];
                 manager.token = user.token;
-
+                
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LOGGED_IN];
                 [[NSUserDefaults standardUserDefaults] setValue:user.name forKey:USER_NAME];
                 [[NSUserDefaults standardUserDefaults] setInteger:user.id forKey:USER_ID];
                 [[NSUserDefaults standardUserDefaults] setBool:user.isDonor forKey:USER_IS_DONOR];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_LOGGED_IN object:self];
-                [self dismissModalViewControllerAnimated:YES];
+                
+                [super dismissModalViewControllerAnimated:YES];
             }
         }];
     } 
@@ -167,11 +178,8 @@
     
 }
 
-- (IBAction)register:(id)sender {
-    RegisterViewController *controller = [[RegisterViewController alloc] init];
-    controller.managedObjectContext = self.managedObjectContext;
-
-    [self presentModalViewController:controller animated:YES];
+- (IBAction)back:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

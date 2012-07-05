@@ -31,4 +31,19 @@ static NSString *getUserInfoByTokenUrl = @"http://dmbstream.com/api/users/curren
         return user;
     } completionHandler:completionHandler];
 }
+
+- (void)registerUser:(NSString*)username email:(NSString*)email password:(NSString*)password completionHandler:(void (^)(User*, NSError *))completionHandler
+{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:username forKey:@"username"];
+    [params setObject:email forKey:@"email"];
+    [params setObject:password forKey:@"password"];
+    
+    [super performRequest:@"users/Register" httpMethod:HTTPMETHOD_POST username:nil password:nil params:params convertHandler:^(NSDictionary *json){
+        NSLog(@"%@", json);
+        User *user = [[User alloc] initWithJson:json];
+        return user;
+    } completionHandler:completionHandler];
+}
+
 @end

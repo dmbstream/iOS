@@ -61,6 +61,8 @@
 		380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C6D15A4EC6A00DEADA4 /* Venue.m */; };
 		380B3C7415A5012F00DEADA4 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C7315A5012F00DEADA4 /* TrackCell.xib */; };
 		380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C7615A5033200DEADA4 /* TrackCell.m */; };
+		380B3C7A15A60B6C00DEADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C7915A60B6C00DEADA4 /* RegisterViewController.m */; };
+		380B3C7F15A62BC700DEADA4 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C7E15A62BC700DEADA4 /* RegisterView.xib */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -176,6 +178,9 @@
 		380B3C7315A5012F00DEADA4 /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		380B3C7515A5032F00DEADA4 /* TrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCell.h; sourceTree = "<group>"; };
 		380B3C7615A5033200DEADA4 /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
+		380B3C7815A60B6B00DEADA4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		380B3C7915A60B6C00DEADA4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		380B3C7E15A62BC700DEADA4 /* RegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -382,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				380B3B731556FD7600DEADA4 /* LoginView.xib */,
+				380B3C7E15A62BC700DEADA4 /* RegisterView.xib */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -391,6 +397,8 @@
 			children = (
 				380B3B701556FD6200DEADA4 /* LoginViewController.h */,
 				380B3B711556FD6200DEADA4 /* LoginViewController.m */,
+				380B3C7815A60B6B00DEADA4 /* RegisterViewController.h */,
+				380B3C7915A60B6C00DEADA4 /* RegisterViewController.m */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -677,6 +685,7 @@
 				380B3C2715A2B57200DEADA4 /* Add@2x.png in Resources */,
 				380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */,
 				380B3C7415A5012F00DEADA4 /* TrackCell.xib in Resources */,
+				380B3C7F15A62BC700DEADA4 /* RegisterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +727,7 @@
 				380B3C6B15A4E63900DEADA4 /* Track.m in Sources */,
 				380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */,
 				380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */,
+				380B3C7A15A60B6C00DEADA4 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
