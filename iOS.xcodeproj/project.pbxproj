@@ -296,7 +296,7 @@
 		380B3B361555F0BF00DEADA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				380B3B6E1556FD0800DEADA4 /* Login */,
+				380B3B6E1556FD0800DEADA4 /* Account */,
 				380B3B671556D29600DEADA4 /* Chat */,
 				380B3B43155627E100DEADA4 /* MainMenu */,
 				380B3B601556C6E600DEADA4 /* Concerts */,
@@ -378,42 +378,34 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
-		380B3B6E1556FD0800DEADA4 /* Login */ = {
+		380B3B6E1556FD0800DEADA4 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				380B3B731556FD7600DEADA4 /* LoginView.xib */,
 			);
-			path = Login;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		380B3B6F1556FD2D00DEADA4 /* Login */ = {
+		380B3B6F1556FD2D00DEADA4 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				380B3B701556FD6200DEADA4 /* LoginViewController.h */,
 				380B3B711556FD6200DEADA4 /* LoginViewController.m */,
 			);
-			path = Login;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		380B3B9C1557560C00DEADA4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				380B3BA01557571500DEADA4 /* Account */,
+				380B3BA11557574C00DEADA4 /* AccountService.h */,
+				380B3BA21557574C00DEADA4 /* AccountService.m */,
 				380B3B9D1557564300DEADA4 /* Service.h */,
 				380B3B9E1557564300DEADA4 /* Service.m */,
 				380B3C3115A4C9A000DEADA4 /* ConcertService.h */,
 				380B3C3215A4C9A000DEADA4 /* ConcertService.m */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		380B3BA01557571500DEADA4 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				380B3BA11557574C00DEADA4 /* AccountService.h */,
-				380B3BA21557574C00DEADA4 /* AccountService.m */,
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		380B3BC21560942100DEADA4 /* Categories */ = {
@@ -543,7 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				380B3B291555E42800DEADA4 /* Shared */,
-				380B3B6F1556FD2D00DEADA4 /* Login */,
+				380B3B6F1556FD2D00DEADA4 /* Account */,
 				380B3B3C15561B5C00DEADA4 /* MainMenu */,
 				380B3B25155479C200DEADA4 /* Chat */,
 				380B3B1E1554795A00DEADA4 /* Concerts */,

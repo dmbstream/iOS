@@ -185,6 +185,8 @@
     Track *track = (Track*)[concert.tracks objectAtIndex:indexPath.row];
     
     NSLog(@"Selected track: %@", track);
+    
+    [trackList deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
