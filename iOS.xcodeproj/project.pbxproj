@@ -59,6 +59,8 @@
 		380B3C3F15A4DA5800DEADA4 /* DotNetDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C3E15A4DA5500DEADA4 /* DotNetDateFormatter.m */; };
 		380B3C6B15A4E63900DEADA4 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C6A15A4E63800DEADA4 /* Track.m */; };
 		380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C6D15A4EC6A00DEADA4 /* Venue.m */; };
+		380B3C7415A5012F00DEADA4 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C7315A5012F00DEADA4 /* TrackCell.xib */; };
+		380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C7615A5033200DEADA4 /* TrackCell.m */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -171,6 +173,9 @@
 		380B3C6A15A4E63800DEADA4 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		380B3C6C15A4EC6900DEADA4 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		380B3C6D15A4EC6A00DEADA4 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		380B3C7315A5012F00DEADA4 /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		380B3C7515A5032F00DEADA4 /* TrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCell.h; sourceTree = "<group>"; };
+		380B3C7615A5033200DEADA4 /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -282,6 +287,8 @@
 				380B3B341555EE5400DEADA4 /* FooterViewController.m */,
 				380B3B4015561D8E00DEADA4 /* ContainerViewController.h */,
 				380B3B4115561D8E00DEADA4 /* ContainerViewController.m */,
+				380B3C7515A5032F00DEADA4 /* TrackCell.h */,
+				380B3C7615A5033200DEADA4 /* TrackCell.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -307,6 +314,7 @@
 				380B3B381555F10300DEADA4 /* HeaderView.xib */,
 				380B3B3A1556037400DEADA4 /* FooterView.xib */,
 				380B3B4C15564A2800DEADA4 /* ExpandedPlayerView.xib */,
+				380B3C7315A5012F00DEADA4 /* TrackCell.xib */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -676,6 +684,7 @@
 				380B3C2615A2B57200DEADA4 /* Add.png in Resources */,
 				380B3C2715A2B57200DEADA4 /* Add@2x.png in Resources */,
 				380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */,
+				380B3C7415A5012F00DEADA4 /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +725,7 @@
 				380B3C3F15A4DA5800DEADA4 /* DotNetDateFormatter.m in Sources */,
 				380B3C6B15A4E63900DEADA4 /* Track.m in Sources */,
 				380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */,
+				380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

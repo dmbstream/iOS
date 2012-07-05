@@ -12,6 +12,7 @@
 
 @synthesize id = _id,
 name = _name,
+duration = _duration,
 url_high = _url_high,
 url_low = _url_low;
 
@@ -23,6 +24,7 @@ url_low = _url_low;
     
     self.id = (NSString*)[json objectForKey:@"id"];
     self.name = (NSString*)[json objectForKey:@"name"];
+    self.duration = (NSString*)[json objectForKey:@"duration"];
     self.url_high = (NSString*)[json objectForKey:@"url_high"];
     self.url_low = (NSString*)[json objectForKey:@"url_low"];
     

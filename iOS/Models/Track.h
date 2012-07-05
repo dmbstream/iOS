@@ -12,6 +12,7 @@
 
 @property NSString *id;
 @property NSString *name;
+@property NSString *duration;
 @property NSString *url_high;
 @property NSString *url_low;
 

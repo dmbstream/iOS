@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "Concert.h"
 
-@interface ConcertDetailsViewController : BaseViewController
-
+@interface ConcertDetailsViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    Concert *concert;
+}
 @property (nonatomic) NSString *concertId;
-@property (nonatomic) NSString *lastConcertId;
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *artist;
