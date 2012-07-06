@@ -113,7 +113,7 @@
     {
         isValid = FALSE;
         [username becomeFirstResponder];
-        userErrors = [userErrors stringByAppendingString:@"A Username of at least 3 characters is required. \r\n"];
+        userErrors = [userErrors stringByAppendingString:@"A username of at least 3 characters is required. \r\n"];
     }
     if(![email requiredText] || ![email validEmailAddress])
     {
@@ -127,7 +127,7 @@
         {
             [password becomeFirstResponder];
         }
-        userErrors = [userErrors stringByAppendingString:@"A valid password of at least 6 characters is required. \r\n"];
+        userErrors = [userErrors stringByAppendingString:@"A password of at least 6 characters is required. \r\n"];
         isValid = FALSE;
     }
     
