@@ -11,6 +11,7 @@
 #import "Concert.h"
 #import "Track.h"
 #import "TrackCell.h"
+#import "NSDate+Strings.h"
 
 @interface ConcertDetailsViewController ()
 
@@ -42,6 +43,7 @@
 
 - (void)viewDidUnload
 {
+    [self setConcertId:nil];
     [self setArtist:nil];
     [self setDate:nil];
     [self setVenue:nil];
@@ -80,19 +82,12 @@
             concert = c;
             // Make sure that we know the displayed concert id, if this was a random concert
             concertId = concert.id;
-            
-            NSDateFormatter *titleFormatter = [[NSDateFormatter alloc] init];
-            [titleFormatter setDateFormat:@"yyyy-MM-dd"];
-            
-            
-            [title setText:[NSString stringWithFormat:@"%@ :: %@", [titleFormatter stringFromDate:concert.date], concert.name]];            
+                        
+            [title setText:[NSString stringWithFormat:@"%@ :: %@", [concert.date toShortDateString], concert.name]];            
             [artist setText:concert.artist.name];
             [venue setText:concert.venue.name];
 
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateStyle:NSDateFormatterLongStyle];
-            [formatter setTimeStyle:NSDateFormatterNoStyle];
-            [date setText:[formatter stringFromDate:concert.date]];
+            [date setText:[concert.date toLongDateString]];
             
             // Populate the track table now
             int trackRowHeight = [concert.tracks count] * 50;

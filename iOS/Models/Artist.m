@@ -21,7 +21,7 @@ name = _name;
 		return nil;
     
     self.id = (int)[json objectForKey:@"id"];
-    self.abbreviation = (NSString*)[json objectForKey:@"abbreviation"];
+    self.abbreviation = (NSString*)[json objectForKey:@"abbr"];
     self.name = (NSString*)[json objectForKey:@"name"];
     
     

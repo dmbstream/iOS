@@ -13,5 +13,7 @@
 @interface ConcertService : Service
 
 - (void)getConcert:(NSString*)concertId completionHandler:(void (^)(Concert*, NSError *))completionHandler;
+- (void)getLatestPerformed:(void (^)(NSArray*, NSError *))completionHandler;
+- (void)getLatestAdded:(void (^)(NSArray*, NSError *))completionHandler;
 
 @end

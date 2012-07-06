@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface LatestPerformedConcertsViewController : BaseViewController
+@interface LatestPerformedConcertsViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    BOOL hasLoaded;
+    NSArray *concerts;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *concertList;
 
 - (IBAction)back:(id)sender;
 

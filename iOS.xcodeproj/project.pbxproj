@@ -63,6 +63,9 @@
 		380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C7615A5033200DEADA4 /* TrackCell.m */; };
 		380B3C7A15A60B6C00DEADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B3C7915A60B6C00DEADA4 /* RegisterViewController.m */; };
 		380B3C7F15A62BC700DEADA4 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B3C7E15A62BC700DEADA4 /* RegisterView.xib */; };
+		381C5E5415A7381800441A26 /* ConcertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C5E5315A7381800441A26 /* ConcertCell.m */; };
+		381C5E5715A738A700441A26 /* ConcertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381C5E5615A738A700441A26 /* ConcertCell.xib */; };
+		381C5E5A15A73CBE00441A26 /* NSDate+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C5E5915A73CBE00441A26 /* NSDate+Strings.m */; };
 		3822DEBB154E506400E1A452 /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAD154E506400E1A452 /* fastforward.png */; };
 		3822DEBC154E506400E1A452 /* fastforward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAE154E506400E1A452 /* fastforward@2x.png */; };
 		3822DEBD154E506400E1A452 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3822DEAF154E506400E1A452 /* pause.png */; };
@@ -181,6 +184,11 @@
 		380B3C7815A60B6B00DEADA4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		380B3C7915A60B6C00DEADA4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		380B3C7E15A62BC700DEADA4 /* RegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		381C5E5215A7381800441A26 /* ConcertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcertCell.h; sourceTree = "<group>"; };
+		381C5E5315A7381800441A26 /* ConcertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcertCell.m; sourceTree = "<group>"; };
+		381C5E5615A738A700441A26 /* ConcertCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConcertCell.xib; sourceTree = "<group>"; };
+		381C5E5815A73CBE00441A26 /* NSDate+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Strings.h"; sourceTree = "<group>"; };
+		381C5E5915A73CBE00441A26 /* NSDate+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Strings.m"; sourceTree = "<group>"; };
 		3822DEAD154E506400E1A452 /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
 		3822DEAE154E506400E1A452 /* fastforward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fastforward@2x.png"; sourceTree = "<group>"; };
 		3822DEAF154E506400E1A452 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -294,6 +302,8 @@
 				380B3B4115561D8E00DEADA4 /* ContainerViewController.m */,
 				380B3C7515A5032F00DEADA4 /* TrackCell.h */,
 				380B3C7615A5033200DEADA4 /* TrackCell.m */,
+				381C5E5215A7381800441A26 /* ConcertCell.h */,
+				381C5E5315A7381800441A26 /* ConcertCell.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 				380B3B3A1556037400DEADA4 /* FooterView.xib */,
 				380B3B4C15564A2800DEADA4 /* ExpandedPlayerView.xib */,
 				380B3C7315A5012F00DEADA4 /* TrackCell.xib */,
+				381C5E5615A738A700441A26 /* ConcertCell.xib */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -421,6 +432,8 @@
 			children = (
 				380B3BC3156099CF00DEADA4 /* UITextField+Validation.h */,
 				380B3BC4156099CF00DEADA4 /* UITextField+Validation.m */,
+				381C5E5815A73CBE00441A26 /* NSDate+Strings.h */,
+				381C5E5915A73CBE00441A26 /* NSDate+Strings.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -686,6 +699,7 @@
 				380B3C2F15A3D42400DEADA4 /* ConcertDetailsView.xib in Resources */,
 				380B3C7415A5012F00DEADA4 /* TrackCell.xib in Resources */,
 				380B3C7F15A62BC700DEADA4 /* RegisterView.xib in Resources */,
+				381C5E5715A738A700441A26 /* ConcertCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +742,8 @@
 				380B3C6E15A4EC6C00DEADA4 /* Venue.m in Sources */,
 				380B3C7715A5033400DEADA4 /* TrackCell.m in Sources */,
 				380B3C7A15A60B6C00DEADA4 /* RegisterViewController.m in Sources */,
+				381C5E5415A7381800441A26 /* ConcertCell.m in Sources */,
+				381C5E5A15A73CBE00441A26 /* NSDate+Strings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

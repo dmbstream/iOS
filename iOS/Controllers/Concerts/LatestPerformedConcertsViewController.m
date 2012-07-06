@@ -7,12 +7,17 @@
 //
 
 #import "LatestPerformedConcertsViewController.h"
+#import "ConcertService.h"
+#import "ConcertCell.h"
+#import "NSDate+Strings.h"
+#import "ConcertDetailsViewController.h"
 
 @interface LatestPerformedConcertsViewController ()
 
 @end
 
 @implementation LatestPerformedConcertsViewController
+@synthesize concertList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +36,42 @@
 
 - (void)viewDidUnload
 {
+    [self setConcertList:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewWillAppear");
+    
+    // If we have just shown this concert, no need to reload it from the site
+    if (hasLoaded)
+        return;
+    
+    // Show loading spinner
+    [super showActivityIndicator];
+    
+    ConcertService *service = [ConcertService new];
+    
+    [service getLatestPerformed:^(NSArray* items, NSError* error) {
+        if (error) {
+            NSMutableString *message = [[NSMutableString alloc] initWithString: @"There was a problem getting the list of concerts.  Please try again."];
+            //                [message appendString:[error localizedDescription]];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alertView show];
+            
+            NSLog(@"%@", error);
+        } else {
+            
+            concerts = items;
+            NSLog(@"Loaded %d items.", [items count]);
+            [concertList reloadData];
+           
+            hasLoaded = true;
+        }
+        [super hideActivityIndicator];
+    }];      
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -43,4 +82,69 @@
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"Cells: %d", [concerts count]);
+    return [concerts count];
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Loading cell: %d", indexPath.row);
+    
+    static NSString *CellIdentifier = @"ConcertCell";
+    ConcertCell *cell = (ConcertCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *nibObjects = [[NSBundle mainBundle] loadNibNamed:@"ConcertCell" owner:nil options:nil];
+        
+        for(id currentNibObject in nibObjects)
+        {
+            if ([currentNibObject isKindOfClass:[UITableViewCell class]]) {
+                cell = (ConcertCell*)currentNibObject;
+                break;  
+            }
+        }
+    }
+    
+    Concert *concert = (Concert*)[concerts objectAtIndex:indexPath.row];
+    
+    cell.name.text = concert.name;
+    cell.artist.text = concert.artist.abbreviation;
+    cell.date.text = [concert.date toShortDateString];
+    
+    NSLog(@"Loaded cell for: %@", concert);
+    
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Concert *concert = (Concert*)[concerts objectAtIndex:indexPath.row];
+    
+    NSLog(@"Selected concert: %@", concert);
+
+    [concertList deselectRowAtIndexPath:indexPath animated:YES];
+
+    ConcertDetailsViewController *controller = [[ConcertDetailsViewController alloc] init];
+    controller.managedObjectContext = self.managedObjectContext;
+    controller.concertId = concert.id;
+    
+    [self.navigationController pushViewController:controller animated:YES];    
+}
+
 @end
